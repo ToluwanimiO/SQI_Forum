@@ -1,0 +1,81 @@
+.round{
+    border-radius: 1.5em;
+    background-color: #F6F6F6;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    border:0px;
+    margin-top: -50px;
+    padding-top: 70px;
+    z-index: -1;
+}
+.signText{
+    font-size: large;
+    font-weight: 500; 
+}
+.input{
+    margin-top: 1em;
+    border-radius: 20px;
+    background-color: #FBFBFB;
+    border: #7D88AB solid 1px;
+    padding: 10px;
+    font-weight: 500;
+}
+.input:focus{
+    border: #7D88AB solid 1px;
+    box-shadow: 0 0 0 0.1rem rgba(23, 50, 78, 0.25);
+}
+.inputEdit{
+    font-size: small;
+    margin-top: 20px;
+    border-radius: 20px;
+    background-color: #FBFBFB;
+    border: #7D88AB solid 1px;
+}
+.inputEdit:focus{
+    border: #7D88AB solid 1px;
+    box-shadow: 0 0 0 0.1rem rgba(23, 50, 78, 0.25);
+}
+.input1{
+    background-color: #DBDBDB;
+    border: 0;
+}
+.input3{
+    margin-bottom: 20px;
+}
+.signButton{
+    border-radius: 1.5em;
+    font-weight: 500;
+    margin-top: 1.5em;
+    width: fit-content;
+    padding: 10px 20px 10px;
+    font-size: large;
+    background-color: #041A60;
+    border: #041A60;
+    color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1em;
+}
+.signButton:hover, .signButton:focus{
+    background-color: #041A60;
+    border: #041A60;
+    box-shadow: none;
+}
+.logoContainer{
+    border-radius: 50%;
+    background-color: #F6F6F6;
+    width: 100px;
+    height: 100px;
+    /* box-shadow: -1px -2px 5px rgba(0, 0, 0, 0.4); */
+    z-index: 100;
+    /* background-image: url('../../assets/sqicollege.png'); */
+}
+.cardRound{
+    border-radius: 1.5em;
+}
+.rowPad{
+    margin-top: 1.5em;
+}
+.rotate{
+    transform: translate(0px,70px) rotate(-40deg);
+    font-size: large;
+    color:grey;
+}
