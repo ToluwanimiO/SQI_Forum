@@ -1,0 +1,43 @@
+
+<div class="container p-5 mt-4 bg-white">
+  <app-navbar></app-navbar>
+  <div class="row mt-2 p-3 justify-content-center">
+
+      <!-- <div class="col-12 col-lg-12 "> -->
+        <div class="table-responsive"  style="border-top-left-radius: 20px !important;">
+            <table class="table table-borderless table-hover">
+                <thead class="thead t-radius border-radius circle card-body" >
+                  <tr>
+                    <th class="th">Topic</th>
+                    <th class="category-hover">
+                        <div class="dropdown">
+                          <div class="dropdown-toggle" data-toggle="dropdown">
+                            CATEGORIES
+                          </div>
+                          <div class="dropdown-menu">
+                            <div class="drop-height">
+                              <a class="dropdown-item" href="#" *ngFor="let item of isCategoriesArray">{{item}}</a>
+                            </div>
+                          </div>
+                        </div>
+                    </th>
+                    <th>UPVOTE</th>
+                    <th>DATE</th>
+                    <th>REPLIES</th>
+                  </tr>
+                </thead>
+                <tbody class="tbody p-5" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                  <tr *ngFor="let item of isHomepageArray"class="tr-style">
+                    <td class="d-none d-lg-block"><div class="reduce-textdesktop"><a href="" class="text-dark">{{item.topic}}</a></div> </td>
+                    <td class="ml-1 d-block d-md-none"><div class="reduce-text"><a href="" class="text-secondary">{{item.topic}}mm</a></div></td>
+                    <td class="hack">{{item.categories}}</td>
+                    <td>{{item.upvote}}</td>
+                    <td>19-4-2019</td>
+                    <td>28</td>
+                  </tr>
+                </tbody>
+            </table>
+        </div>
+      <!-- </div> -->
+  </div>
+</div>

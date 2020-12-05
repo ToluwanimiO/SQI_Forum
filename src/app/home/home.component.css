@@ -1,0 +1,28 @@
+body{
+  background-color: red;
+}
+.hack{
+  color: #FFBB00;
+}
+.reduce-text{
+  white-space:nowrap;
+  width:150px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.reduce-textdesktop{
+  white-space:nowrap;
+  width:300px;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+.tr-style{
+  border-bottom: 1px solid rgb(236, 236, 236);
+}
+.category-hover:hover{
+  cursor: pointer;
+}
+.drop-height{
+    height: 320px;
+    overflow:auto
+}

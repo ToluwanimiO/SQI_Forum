@@ -1,0 +1,16 @@
+<!-- <p>categories works!</p> -->
+<div class="container mt-4 p-5">
+  <app-navbar></app-navbar>
+  <div class="row p-3">
+    <div class="shadow-sm text-center mx-auto  rounded-circle">
+        <img src="../../assets/sqi.jpg" class="" width="70px" alt="">
+    </div>
+    <div class="col-md-12 mt-n4 shadow-sm">
+        <div class="row p-3 mt-5">
+            <div class="col-sm-6 text-xs-center col-md-3 mx-auto" *ngFor="let carts of isArrayCategories">
+                <button class="btn">{{carts}}</button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
