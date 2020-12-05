@@ -1,0 +1,47 @@
+<div class="container">
+    <div class="row div">
+        <div class="col text-center shadow">
+            <h1 class="mt-4">Create a new Post</h1>
+            <form action="" class="border-0">
+                <div class="row form-group">
+                    <div class="col-md-3">
+                        <select class=" form-control mt-2" placeholder="Categories">
+                            <option style="display: none;">Categories</option>
+                            <option class="">1</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" id="" name="" class="text-muted form-control mt-2" placeholder="Post Topic">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <form [formGroup]="useForm">
+                            <textarea id="subject" formControlName="createpost" value="hello" class="form-control"
+                                placeholder="Write something.."></textarea>
+                            <div class="icons">
+                                <button (click)="unordered()" class="icon-user mb-3 mt-4 ml-3"><i
+                                        class="fa fa-list-ul"></i></button>
+                                <button (click)="ordered()" class="icon-user2 mb-3 ml-3"><i
+                                        class="fa fa-list-ol"></i></button>
+                                <button (click)="underline()" class="icon-user3 mb-3 ml-3"><i
+                                        class="fa fa-underline"></i></button>
+                                <button (click)="link()" class="icon-user4 mb-3 ml-3"><i
+                                        class="fa fa-link"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-4">
+                        <input (click)="submitPost()" type="submit" value="Publish" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

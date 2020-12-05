@@ -123,5 +123,8 @@
       }
     }
   },
-  "defaultProject": "SQI-Forum"
+  "defaultProject": "SQI-Forum",
+  "cli": {
+    "analytics": false
+  }
 }
