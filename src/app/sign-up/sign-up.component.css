@@ -15,7 +15,7 @@
 .input{
     margin-top: 2em;
     border-radius: 20px;
-    padding: 1em;
+    padding: 1.6em;
     background-color: #FBFBFB;
     border: #7D88AB solid 1px;
 }
@@ -61,4 +61,8 @@
     position: relative;
     padding-top: 20px;
     /* background-image: url('../../assets/sqicollege.png'); */
+}
+.linkBtn:focus, .linkBtn:hover,.linkBtn{
+    cursor: pointer;
+    outline: none;
 }

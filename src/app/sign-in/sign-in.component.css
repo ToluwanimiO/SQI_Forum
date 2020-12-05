@@ -15,7 +15,7 @@
 .input{
     margin-top: 2em;
     border-radius: 20px;
-    padding: 1em;
+    padding: 1.6em;
     background-color: #FBFBFB;
     border: #7D88AB solid 1px;
 }
@@ -26,7 +26,7 @@
 .signButton{
     border-radius: 1.5em;
     font-weight: 500;
-    margin-top: 2em;
+    margin-top: 1em;
     width: fit-content;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -61,4 +61,8 @@
     padding-top: 20px;
     position: relative;
     /* background-image: url('../../assets/sqicollege.png'); */
+}
+.linkBtn:focus, .linkBtn:hover,.linkBtn{
+    cursor: pointer;
+    outline: none;
 }

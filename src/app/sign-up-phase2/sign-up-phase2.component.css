@@ -5,11 +5,12 @@
     border:0px;
     margin-top: -50px;
     padding-top: 70px;
-    z-index: -1;
+    /* z-index: -1; */
 }
 .signText{
     font-size: large;
     font-weight: 500; 
+    margin-top: 20px;
 }
 .input{
     margin-top: 1em;
@@ -66,16 +67,31 @@
     height: 100px;
     /* box-shadow: -1px -2px 5px rgba(0, 0, 0, 0.4); */
     z-index: 100;
+    position: relative;
+    padding-top: 20px;
     /* background-image: url('../../assets/sqicollege.png'); */
 }
 .cardRound{
     border-radius: 1.5em;
+    height: 180px;
 }
 .rowPad{
     margin-top: 1.5em;
 }
-.rotate{
+/* .rotate{
     transform: translate(0px,70px) rotate(-40deg);
     font-size: large;
     color:grey;
+} */
+.addProfile{
+    color:grey; 
+    font-size: 15px;
+    /* margin-top: -10px; */
+    padding-bottom: 10px;
+    white-space: wrap;
+}
+.plus{
+    color:grey;
+    font-size:3.5em;
+    margin: auto;
 }
