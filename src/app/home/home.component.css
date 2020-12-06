@@ -26,3 +26,7 @@ body{
     height: 320px;
     overflow:auto
 }
+.card-style{
+  height: 30px !important;
+  border-radius: 20px 20px 7px 7px;
+}

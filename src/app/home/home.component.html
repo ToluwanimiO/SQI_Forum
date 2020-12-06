@@ -1,14 +1,17 @@
 
 <div class="container p-5 mt-4 bg-white">
   <app-navbar></app-navbar>
-  <div class="row mt-2 p-3 justify-content-center">
-
+  <div class="card card-style mt-3">
+      <div class="card-body" >
+      </div>
+  </div>
+  <div class="row mt-n5 p-3 justify-content-center">
       <!-- <div class="col-12 col-lg-12 "> -->
         <div class="table-responsive"  style="border-top-left-radius: 20px !important;">
             <table class="table table-borderless table-hover">
                 <thead class="thead t-radius border-radius circle card-body" >
                   <tr>
-                    <th class="th">Topic</th>
+                    <th class="th dropdown">Topic</th>
                     <th class="category-hover">
                         <div class="dropdown">
                           <div class="dropdown-toggle" data-toggle="dropdown">
@@ -16,14 +19,16 @@
                           </div>
                           <div class="dropdown-menu">
                             <div class="drop-height">
-                              <a class="dropdown-item" href="#" *ngFor="let item of isCategoriesArray">{{item}}</a>
+                              <a class="dropdown-item" href="#" *ngFor="let item of categories">
+                                {{item.name}}
+                              </a>
                             </div>
                           </div>
                         </div>
                     </th>
-                    <th>UPVOTE</th>
-                    <th>DATE</th>
-                    <th>REPLIES</th>
+                    <th class="dropdown">UPVOTE</th>
+                    <th class="dropdown">DATE</th>
+                    <th class="dropdown">REPLIES</th>
                   </tr>
                 </thead>
                 <tbody class="tbody p-5" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">

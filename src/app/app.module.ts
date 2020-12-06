@@ -10,6 +10,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule} from '@angular/common/http';
 // import { SignInComponent } from './sign-in/sign-in.component';
 
 @NgModule({
@@ -26,7 +27,8 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

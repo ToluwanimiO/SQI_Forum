@@ -2,15 +2,20 @@
 <div class="container mt-4 p-5">
   <app-navbar></app-navbar>
   <div class="row p-3">
-    <div class="shadow-sm text-center mx-auto  rounded-circle">
-        <img src="../../assets/sqi.jpg" class="" width="70px" alt="">
+    <div class="shadow-sm text-center mx-auto mt-3  rounded-circle">
+        <img src="../../assets/sqicollege.png" class="mt-n2" width="70px" alt="">
     </div>
-    <div class="col-md-12 mt-n4 shadow-sm">
-        <div class="row p-3 mt-5">
-            <div class="col-sm-6 text-xs-center col-md-3 mx-auto" *ngFor="let carts of isArrayCategories">
-                <button class="btn">{{carts}}</button>
-            </div>
+    <div class="col-12 col-md-12 bg-light mt-n4 shadow-sm carts-height">
+        <div class="row p-3 mt-3">
+          <!-- <div class=""> -->
+            <div class="col-sm-6  text-xs-center col-md-3 mx-auto" *ngFor="let carts of isArrayCategories">
+                <button type="button" class="btn" routerLink="/categories/sub-categories">{{carts}}</button>
+              </div>
+            <!-- </div> -->
         </div>
     </div>
   </div>
 </div>
+<footer >
+
+</footer>
