@@ -9,15 +9,47 @@
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-md-9">
-                            <form class="">
+                            <form [formGroup]="userForm">
                                 <b class="signText">Sign-up to your account</b>
-                                <div class="form-group  mx-auto">
-                                    <input type="text" class="form-control text-center input " placeholder="Username"/>
+                                <div class="form-group mx-auto">
+                                    <input type="text" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$" class="form-control text-center input" placeholder="Email" formControlName="Email" required appUsernameValidator [class.is-valid]="userForm.get('Email').valid && userForm.get('Email').dirty" [class.is-invalid]="userForm.get('Email').invalid && userForm.get('Email').touched"/>
+                                    <span *ngIf="userForm.get('Email').invalid">
+                                        <small *ngIf="userForm.get('Email').errors.existsErr" class="text-danger">
+                                            Email already exists
+                                        </small>
+                                        <small *ngIf="userForm.get('Email').errors.pattern && userForm.get('Email').touched" class="text-danger">
+                                            Invalid email address
+                                        </small>
+                                        <small *ngIf="userForm.get('Email').errors.required && userForm.get('Email').touched" class="text-danger">
+                                            Email field cannot be empty
+                                        </small>
+                                    </span>
                                 </div>
-                                <div class="form-group  mx-auto">
-                                    <input type="text" class="form-control text-center input " placeholder="Password"/>
+                                <div class="form-group mx-auto">
+                                    <input type="text" class="form-control text-center input " placeholder="Username" formControlName="Username" required [class.is-valid]="userForm.get('Password').valid && userForm.get('Password').touched" [class.is-invalid]="userForm.get('Password').invalid && userForm.get('Password').touched"/>
+                                    <span *ngIf="userForm.get('Username').invalid">
+                                        <small *ngIf="userForm.get('Username').errors.required && userForm.get('Username').touched" class="text-danger">
+                                            Username field cannot be empty
+                                        </small>
+                                    </span>
                                 </div>
-                                <button class="btn mx-auto signButton">Sign Up</button>
+                                <div class="form-group mx-auto">
+                                    <input type="password" class="form-control text-center input " placeholder="Password" formControlName="Password" required [class.is-valid]="userForm.get('Password').valid && userForm.get('Password').touched" [class.is-invalid]="userForm.get('Password').invalid && userForm.get('Password').touched"/>
+                                    <span *ngIf="userForm.get('Password').invalid">
+                                        <small *ngIf="userForm.get('Password').errors.required && userForm.get('Password').touched" class="text-danger">
+                                            Password field cannot be empty
+                                        </small>
+                                    </span>
+                                </div>
+                                <div class="form-group mx-auto">
+                                    <input type="password" class="form-control text-center input " placeholder="Confirm Password" formControlName="C_Password" required [class.is-valid]="userForm.get('C_Password').valid && userForm.get('C_Password').touched" [class.is-invalid]="userForm.get('C_Password').invalid && userForm.get('C_Password').touched"/>
+                                    <span *ngIf="userForm.get('C_Password').invalid">
+                                        <small *ngIf="userForm.get('C_Password').errors.required && userForm.get('C_Password').touched" class="text-danger">
+                                            Confirm Password field cannot be empty
+                                        </small>
+                                    </span>
+                                </div>
+                                <button type="submit" class="btn mx-auto signButton" (click)="signUp()" [disabled]="userForm.invalid">Sign Up</button>
                                 <div class="col-12 textEdit mx-auto">
                                     <p class="text-right">Already have an account?</p>
                                     <p routerLink="/signIn" class="text-right textColorBlue linkBtn">Sign in!</p>

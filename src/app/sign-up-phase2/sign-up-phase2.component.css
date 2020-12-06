@@ -16,7 +16,7 @@
     margin-top: 1em;
     border-radius: 20px;
     background-color: #FBFBFB;
-    border: #7D88AB solid 1px;
+    /* border: #7D88AB solid 1px; */
     padding: 10px;
     font-weight: 500;
 }
@@ -91,7 +91,7 @@
     white-space: wrap;
 }
 .plus{
-    color:grey;
+    color:rgb(196, 194, 194);
     font-size:3.5em;
     margin: auto;
 }

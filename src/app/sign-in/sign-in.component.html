@@ -9,15 +9,15 @@
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-md-9">
-                            <form class="">
+                            <form [formGroup]="userSignIn">
                                 <b class="signText">Sign-in to your account</b>
                                 <div class="form-group  mx-auto">
-                                    <input type="text" class="form-control text-center input " placeholder="Username"/>
+                                    <input type="text" class="form-control text-center input " placeholder="Username" formControlName="Username"/>
                                 </div>
                                 <div class="form-group  mx-auto">
-                                    <input type="text" class="form-control text-center input " placeholder="Password"/>
+                                    <input type="text" class="form-control text-center input " placeholder="Password" formControlName="Password"/>
                                 </div>
-                                <button class="btn mx-auto signButton">Sign In</button>
+                                <button type="submit" class="btn mx-auto signButton" (click)="signIn()">Sign In</button>
                                 <div class="col-12 textEdit mx-auto">
                                     <p class="text-right">Don't have an account?</p>
                                     <p routerLink="/signUp" class="text-right textColorBlue linkBtn">Sign up!</p>
