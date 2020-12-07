@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, AbstractControl, Validators } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
+import { PostserviceService } from '../postservice.service';
 
 @Component({
   selector: 'app-creatnewpost',
@@ -7,51 +8,41 @@ import { FormBuilder, AbstractControl, Validators } from '@angular/forms';
   styleUrls: ['./creatnewpost.component.css']
 })
 export class CreatnewpostComponent implements OnInit {
-  public createpost;
-  constructor(public fb: FormBuilder) { }
-  public useForm = this.fb.group({
 
-    createpost: ["", [Validators.required]]
-    // createpost: ['', [this.validateTextarea]],
+
+  constructor(public fb: FormBuilder, public postcate: PostserviceService) { }
+  public useForm = this.fb.group({
+    category: [''],
+    title: [''],
+    body: ['']
+    // createpost: [""],
   });
 
+  public filterText;
+  public posts = [];
+  public categories;
+  // public test = ["hey", "gedu"]
 
-  // validateTextarea(control: AbstractControl): {[key: string]: any} | null {
-  //   if (control.value) {
-  //     return {value}
+  // ordered() {
+  //   let subject = document.getElementById('subject');
+  //   let check = 0;
+  //   check += 1;
+  //   let start = "<ol>";
+  //   for (var i = 1; i <= check; i++) {
+  //     start += "<li></li>";
   //   }
+  //   start += "</ol>";
+
+  //   subject.innerHTML = start;
   // }
 
-  unordered() {
-    // var x = document.createElement("OL");
-    // x.setAttribute("id", "myO");
-    // document.body.appendChild(x);
-    // var y = document.createElement("OL");
-    // var t = document.createTextNode("");
-    // y.appendChild(t);
-    // document.getElementById("myO").appendChild(y);
-  }
-
-  ordered() {
-    // var a = document.getElementById("subject")
-    var x = document.createElement("OL");
-    x.setAttribute("id", "myOl");
-    document.body.appendChild(x);
-    var y = document.createElement("LI");
-    var t = document.createTextNode("");
-    y.appendChild(t);
-    document.getElementById("myOl").appendChild(y);
-  }
-  underline() {
-
-  }
-
-  link() {
-
-  }
   submitPost() {
     if (this.useForm) {
+      console.log("hi")
       let user = this.useForm.value;
+      this.postcate.postText(user).subscribe((res:any) => {
+        console.log(res)
+      })
       console.log(user)
     } else {
       console.log("THE INPUT YOU ENTER IS INCORRECT")
@@ -60,15 +51,9 @@ export class CreatnewpostComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.postcate.getCategories().subscribe(a => {
+      this.categories = a;
+      console.log(this.categories)
+    })
   }
-
-
-
-
-  //   var changeFontStyle = function (font) { 
-  //     document.getElementById( 
-  //         "output-text").style.fontFamily 
-  //                 = font.value; 
-  // } 
-
 }

@@ -4,6 +4,13 @@
     border-top-right-radius: 20px;
 }
 
+.postbodydowndiv {
+    background: linear-gradient(rgba(249,249,249), rgba(255,254,254));
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+
 .postdiv {
     background-color: #F6F6F6;
 }   
@@ -36,7 +43,7 @@
   .posttime {
       border-radius: 50px;
       border: #041A60;
-     padding: 1.5rem;
+      padding: 1.5rem;
     left: 0;
     }
 
@@ -60,9 +67,10 @@
     }
 
     .commenticons2 {
-        width: 160px;
+        width: 200px;
         text-align: center;
         color: #F1F1F1;
+        text-decoration: #F1F1F1;
         float: left;
         margin-top: 20px;
         height: 30px;
@@ -70,6 +78,7 @@
         border-radius: 50px;
     }
 
+    
     .comment{
         border: 1px solid grey;
         background-color: #FBFBFB;
@@ -90,4 +99,14 @@
         text-align: center;
         line-height: 75px;
         font-size: 30px;
+    }
+
+    .backbtn {
+        outline: none;
+        border: none;
+        background-color: transparent;
+    }
+
+    .username {
+        display: flex;
     }
