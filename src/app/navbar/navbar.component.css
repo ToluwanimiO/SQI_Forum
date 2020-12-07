@@ -10,7 +10,7 @@
   /* border: 2px solid #4CAF50; */
 }
 .form-control{
-  /* width: 400px !important; */
+  min-width: 450px !important;
   height: 30px;
   border-radius: 50px !important;
   box-shadow: none;
@@ -37,3 +37,6 @@
   border-radius: 30px;
   border: white;
 }
+/* .search-input{
+  width: 250%;
+} */
