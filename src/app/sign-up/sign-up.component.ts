@@ -45,6 +45,7 @@ export class SignUpComponent implements OnInit {
     console.log(this.userForm.value)
     this.signUpService.addNewUser(this.userForm.value).subscribe((res:any)=>{
       console.log(res);
+      this.router.navigate(["/signIn"])
     },(err:HttpErrorResponse)=>{
       // let errInput = Object.keys(err.error)[0]
       // console.log(errInput)

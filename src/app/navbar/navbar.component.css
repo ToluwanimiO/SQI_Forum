@@ -1,0 +1,42 @@
+.home-navber{
+  background:linear-gradient(to bottom, darkblue,#041e04);
+  border-radius: 20px;
+  color: white;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 80px;
+  /* padding: 5px; */
+  /* background-color: #cae8ca; */
+  /* border: 2px solid #4CAF50; */
+}
+.form-control{
+  min-width: 450px !important;
+  height: 30px;
+  border-radius: 50px !important;
+  box-shadow: none;
+  border: none;
+}
+.text-size{
+  font-size: 14px !important;
+}
+.t-radius{
+  border-radius: 40px 20px !important;
+}
+.mobile-homenavber{
+  position: -webkit-sticky;
+  position: sticky;
+  top: 57px;
+}
+.btn1-mobile{
+  background: linear-gradient(to bottom, darkblue,#181c24);
+  box-shadow: none;
+}
+.btn2-mobile{
+  background: linear-gradient(to bottom, darkblue,#181c24);
+  box-shadow: none !important;
+  border-radius: 30px;
+  border: white;
+}
+/* .search-input{
+  width: 250%;
+} */

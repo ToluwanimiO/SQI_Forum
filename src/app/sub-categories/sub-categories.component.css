@@ -1,0 +1,11 @@
+.card-style{
+  height: 30px !important;
+  border-radius: 20px 20px 7px 7px;
+}
+.category-hover:hover{
+  cursor: pointer;
+}
+.drop-height{
+  height: 320px;
+  overflow:auto
+}
