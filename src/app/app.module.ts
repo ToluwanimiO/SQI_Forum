@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 // <<<<<<< HEAD
+// <<<<<<< HEAD
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignUpPhase2Component } from './sign-up-phase2/sign-up-phase2.component';
@@ -18,6 +19,9 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
+import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
+import { PostcontentComponent } from './postcontent/postcontent.component';
+import { PostfilterPipe } from './pipes/postfilter.pipe';
 // import { FormsModule } from '@angular/forms';
 // import { HttpClientModule} from '@angular/common/http';
 @NgModule({
@@ -32,7 +36,11 @@ import { SubCategoriesComponent } from './sub-categories/sub-categories.componen
     HeaderComponent,
     NavbarComponent,
     CategoriesComponent,
-    SubCategoriesComponent
+    SubCategoriesComponent,
+    CreatnewpostComponent,
+    PostcontentComponent,
+    PostfilterPipe
+  ],
 // =======
 // import { HomeComponent } from './home/home.component';
 // import { HeaderComponent } from './header/header.component';
@@ -50,14 +58,26 @@ import { SubCategoriesComponent } from './sub-categories/sub-categories.componen
 //     HeaderComponent,
 //     NavbarComponent,
 //     CategoriesComponent,
-//     SubCategoriesComponent
+//     SubCategoriesComponent,
     // SignInComponent
 // >>>>>>> e34fcb97bd888f542cfeaeea76afd6515cb42391
-  ],
+// =======
+
+// import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
+
+// import { HttpClientModule } from '@angular/common/http';
+
+// @NgModule({
+//   declarations: [
+//     AppComponent,
+    
+// >>>>>>> cfd38875c97c4abb6be2631feb2f91c5875f299a
+//   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+// <<<<<<< HEAD
 // <<<<<<< HEAD
     MatCardModule,
     FormsModule,
@@ -65,6 +85,10 @@ import { SubCategoriesComponent } from './sub-categories/sub-categories.componen
 // =======
 //     FormsModule,
 // >>>>>>> e34fcb97bd888f542cfeaeea76afd6515cb42391
+// =======
+//     FormsModule,
+//     ReactiveFormsModule,
+// >>>>>>> cfd38875c97c4abb6be2631feb2f91c5875f299a
     HttpClientModule
   ],
   providers: [],

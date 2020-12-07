@@ -1,0 +1,36 @@
+<app-header></app-header>
+<div class="container mt-5 my-5">
+    <div class="row div p-3">
+        <div class="col-md-10 text-center shadow-sm shadowT mx-auto">
+            <h1 class="mt-4">Create a new Post</h1>
+            <form action="" class="border-0" [formGroup]="useForm">
+                <div class="row form-group">
+                    <div class="col-md-3">
+                        <!-- <div *ngFor="let c of categories">{{c.name}}</div> -->
+                        <!-- <div></div> -->
+                        <select formControlName="category" class="form-control mt-2">
+                            <option value={{c.name}} class="" *ngFor="let c of categories">{{c.name}}</option>
+                        </select>
+                    </div>
+                    <div class="col-md-9">
+                        <input type="text" id="" name="" formControlName="title" class="text-muted form-control mt-2"
+                            placeholder="Post Topic">
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col">
+                        <form>
+                            <textarea id="subject" formControlName="body" class="form-control"
+                                placeholder="Write something.."></textarea>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col mb-4">
+                        <input (click)="submitPost()" type="submit" value="Publish" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
