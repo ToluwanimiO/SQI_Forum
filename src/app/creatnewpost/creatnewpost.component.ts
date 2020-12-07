@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { PostserviceService } from '../postservice.service';
@@ -37,16 +38,18 @@ export class CreatnewpostComponent implements OnInit {
   // }
 
   submitPost() {
-    if (this.useForm) {
-      console.log("hi")
+    // if (this.useForm) {
+      // console.log("hi")
       let user = this.useForm.value;
       this.postcate.postText(user).subscribe((res:any) => {
-        console.log(res)
+        console.log(res);
+      },(err:HttpErrorResponse)=>{
+        console.log(err);
       })
       console.log(user)
-    } else {
-      console.log("THE INPUT YOU ENTER IS INCORRECT")
-    }
+    // } else {
+    //   console.log("THE INPUT YOU ENTER IS INCORRECT")
+    // }
   }
 
 
