@@ -9,15 +9,24 @@
                 <div class="card-body">
                     <div class="row justify-content-center">
                         <div class="col-md-9">
+                            <div class="text-danger mb-2" *ngIf="invalidDetails">
+                                Invalid username or password
+                            </div>
                             <form [formGroup]="userSignIn">
                                 <b class="signText">Sign-in to your account</b>
                                 <div class="form-group  mx-auto">
-                                    <input type="text" class="form-control text-center input " placeholder="Username" formControlName="Username"/>
+                                    <input type="text" class="form-control text-center input " placeholder="Username" formControlName="username" required  [class.is-invalid]="userSignIn.get('username').invalid && userSignIn.get('username').touched"/>
+                                    <div *ngIf="userSignIn.get('username').invalid && userSignIn.get('username').touched" class="text-danger mt-1">
+                                        Username field cannot be empty
+                                    </div>
                                 </div>
                                 <div class="form-group  mx-auto">
-                                    <input type="text" class="form-control text-center input " placeholder="Password" formControlName="Password"/>
+                                    <input type="text" class="form-control text-center input " placeholder="Password" formControlName="password" required [class.is-invalid]="userSignIn.get('password').invalid && userSignIn.get('password').touched"/>
+                                    <div *ngIf="userSignIn.get('password').invalid && userSignIn.get('password').touched" class="text-danger mt-1">
+                                        Password field cannot be empty
+                                    </div>
                                 </div>
-                                <button type="submit" class="btn mx-auto signButton" (click)="signIn()">Sign In</button>
+                                <button type="submit" class="btn mx-auto signButton" (click)="signIn()" [disabled]="userSignIn.invalid">Sign In</button>
                                 <div class="col-12 textEdit mx-auto">
                                     <p class="text-right">Don't have an account?</p>
                                     <p routerLink="/signUp" class="text-right textColorBlue linkBtn">Sign up!</p>

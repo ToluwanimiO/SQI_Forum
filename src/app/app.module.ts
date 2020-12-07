@@ -10,7 +10,8 @@ import { SignUpPhase2Component } from './sign-up-phase2/sign-up-phase2.component
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import {MatCardModule} from '@angular/material/card';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
-import { UsernameValidatorDirective } from './directives/username-validator.directive'
+import { UsernameValidatorDirective } from './directives/username-validator.directive';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import { UsernameValidatorDirective } from './directives/username-validator.dire
     BrowserAnimationsModule,
     MatCardModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
