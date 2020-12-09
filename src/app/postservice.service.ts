@@ -18,4 +18,10 @@ export class PostserviceService {
     return this.http.post("https://sqiforum.herokuapp.com/api/v1/post/create/", posttext)
 
   }
+  public retrieveLists(){
+    return this.http.get<any>(`${this.baseUrl}/post/list/`);
+  }
+  public retrieveListDetail(slug,id){
+    return this.http.get<any>(`${this.baseUrl}/post/${slug}/${id}`)
+  }
 }

@@ -20,7 +20,7 @@ const routes: Routes = [
   {path:"signUp2",component:SignUpPhase2Component},
   {path:"editProfile",component:EditProfileComponent},
   {path: "create", component: CreatnewpostComponent},
-  {path: "postcontent", component: PostcontentComponent},
+  {path: "postcontent/:slug/:id", component: PostcontentComponent},
   {path:'home', component:HomeComponent},
   
   {path:'categories', children:[

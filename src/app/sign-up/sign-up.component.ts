@@ -22,6 +22,7 @@ export class SignUpComponent implements OnInit {
   public password1Msg;
   public username=false;
   public usernameMsg;
+  public error;
 
   ngOnInit(): void {
   }
@@ -54,20 +55,23 @@ export class SignUpComponent implements OnInit {
       // // console.log(errInput.map(inp=>err.error.password1))
       // console.log(allErrors)
       console.log(err.error)
-      if(Object.keys(err.error)[0]=="password1"){
-        console.log(err.error.password1.map(errorr=>errorr))
-        this.password1=true
-        this.password1Msg=err.error.password1
-        console.log(this.password1Msg)
-        console.log(this.password1)
-      }
-      if(Object.keys(err.error)[0]=="username"){
-        console.log(err.error.password1.map(errorr=>errorr))
-        this.username=true
-        this.usernameMsg=err.error.password1
-        // console.log(this.password1Msg)
-        // console.log(this.password1)
-      }
+      console.log(err)
+      this.error = err.error
+      Object.keys(err.error).map(itemField=>(console.log(itemField,this.error)))
+      // if(Object.keys(err.error)[0]=="password1"){
+      //   console.log(err.error.password1.map(errorr=>errorr))
+      //   this.password1=true
+      //   this.password1Msg=err.error.password1
+      //   console.log(this.password1Msg)
+      //   console.log(this.password1)
+      // }
+      // if(Object.keys(err.error)[0]=="username"){
+      //   console.log(err.error.password1.map(errorr=>errorr))
+      //   this.username=true
+      //   this.usernameMsg=err.error.password1
+      //   // console.log(this.password1Msg)
+      //   // console.log(this.password1)
+      // }
     })
     // this.router.navigate(["/signIn"])
 

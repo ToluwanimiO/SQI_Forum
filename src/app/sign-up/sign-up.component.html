@@ -32,11 +32,11 @@
                                             Username field cannot be empty
                                         </small>
                                     </span>
-                                    <!-- <small *ngIf="username" class="text-danger">
+                                    <small *ngIf="username" class="text-danger">
                                         <span *ngFor="let i = index; let list of username">
                                             {{list}}
                                         </span> 
-                                    </small> -->
+                                    </small>
                                 </div>
                                 <div class="form-group mx-auto">
                                     <input type="password" class="form-control text-center input " placeholder="Password" formControlName="password1" required [class.is-valid]="userForm.get('password1').valid && userForm.get('password1').touched" [class.is-invalid]="userForm.get('password1').invalid && userForm.get('password1').touched"/>
@@ -48,11 +48,11 @@
                                             This password is too short. It must contain at least 8 characters
                                         </small>
                                     </span>
-                                    <!-- <small *ngIf="password1" class="text-danger">
+                                    <small *ngIf="password1" class="text-danger">
                                         <span *ngFor="let i = index; let list of password1Msg">
                                             {{list}}
                                         </span> 
-                                    </small> -->
+                                    </small>
                                 </div>
                                 <div class="form-group mx-auto">
                                     <input type="password" class="form-control text-center input " placeholder="Confirm Password" formControlName="password2" required [class.is-valid]="userForm.get('password2').valid && userForm.get('password2').touched" [class.is-invalid]="userForm.get('password2').invalid && userForm.get('password2').touched"/>

@@ -28,17 +28,17 @@
                     </th>
                     <th class="dropdown">UPVOTE</th>
                     <th class="dropdown">DATE</th>
-                    <th class="dropdown">REPLIES</th>
+                    <!-- <th class="dropdown">REPLIES</th> -->
                   </tr>
                 </thead>
                 <tbody class="tbody p-5" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
                   <tr *ngFor="let item of isHomepageArray"class="tr-style">
-                    <td class="d-none d-lg-block"><div class="reduce-textdesktop"><a routerLink="/postcontent" class="text-dark">{{item.topic}}</a></div> </td>
-                    <td class="ml-1 d-block d-md-none"><div class="reduce-text"><a routerLink="/postcontent" class="text-secondary">{{item.topic}}mm</a></div></td>
-                    <td class="hack">{{item.categories}}</td>
+                    <td class="d-none d-lg-block"><div class="reduce-textdesktop"><a (click)="viewPostDetails(item.slug+'/'+item.id)" class="text-dark">{{item.title}}</a></div> </td>
+                    <td class="ml-1 d-block d-md-none"><div class="reduce-text"><a (click)="viewPostDetails(item.slug+'/'+item.id)" class="text-secondary">{{item.title}}</a></div></td>
+                    <td class="hack">{{item.category.name}}</td>
                     <td>{{item.upvote}}</td>
-                    <td>19-4-2019</td>
-                    <td>28</td>
+                    <td>{{item.created |slice:0:10}}</td>
+                    <!-- <td>28</td> -->
                   </tr>
                 </tbody>
             </table>

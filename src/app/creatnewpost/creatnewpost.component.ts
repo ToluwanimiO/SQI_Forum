@@ -13,7 +13,7 @@ export class CreatnewpostComponent implements OnInit {
 
   constructor(public fb: FormBuilder, public postcate: PostserviceService) { }
   public useForm = this.fb.group({
-    category: [''],
+    category:Number,
     title: [''],
     body: ['']
     // createpost: [""],
@@ -41,12 +41,16 @@ export class CreatnewpostComponent implements OnInit {
     // if (this.useForm) {
       // console.log("hi")
       let user = this.useForm.value;
-      this.postcate.postText(user).subscribe((res:any) => {
+      let newNumber = Number(this.useForm.controls['category'].value)
+      let newPost = {category:newNumber,title:this.useForm.controls['title'].value,body:this.useForm.controls['body'].value}
+      console.log(newPost)
+      console.log(typeof(newNumber))
+      this.postcate.postText(newPost).subscribe((res:any) => {
         console.log(res);
       },(err:HttpErrorResponse)=>{
         console.log(err);
       })
-      console.log(user)
+      // console.log(user)
     // } else {
     //   console.log("THE INPUT YOU ENTER IS INCORRECT")
     // }

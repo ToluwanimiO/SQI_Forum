@@ -5,30 +5,17 @@
             <div class="row">
                 <div class="col mt-3 d-flex postbodydiv shadow-sm">
                     <button routerLink="/" class="fas fa-angle-double-right mt-2 mr-4 prefix backbtn"></button>
-                    <p class="mt-4">Lorem, ipsum dolor </p>
+                    <p class="mt-4">{{postDetail.title}} </p>
                 </div>
             </div>
             <div class="row">
                 <div class="col postdiv">
                     <div class="row">
                         <div class="col-12 col-md-12">
-                            <h3 class="mt-3 text-center"><b>LOREM IPSUM</b></h3>
-                            <h4 class="pl-3 pr-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-                                ea nostrum eius autem nulla similique cumque accusantium consectetur magnam laboriosam
-                                eaque nihil quo minus iusto, saepe hic? Unde, quos dolorem. Lorem ipsum dolor sit amet
-                                consectetur adipisicing elit. Provident minima tempora ipsa rem voluptatibus, iste
-                                necessitatibus dolorum nulla. Similique error fuga veritatis odit dignissimos autem rem
-                                omnis nemo. Sunt, placeat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
-                                quae? Inventore unde cum ex magni, fuga nam eos minus corrupti nobis omnis beatae veniam
-                                nemo repellendus placeat. Aliquam, repudiandae labore?</h4>
-                            <h4 class="pl-3 pr-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
-                                ea nostrum eius autem nulla similique cumque accusantium consectetur magnam laboriosam
-                                eaque nihil quo minus iusto, saepe hic? Unde, quos dolorem. Lorem ipsum dolor sit amet
-                                consectetur adipisicing elit. Provident minima tempora ipsa rem voluptatibus, iste
-                                necessitatibus dolorum nulla. Similique error fuga veritatis odit dignissimos autem rem
-                                omnis nemo. Sunt, placeat! Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
-                                quae? Inventore unde cum ex magni, fuga nam eos minus corrupti nobis omnis beatae veniam
-                                nemo repellendus placeat. Aliquam, repudiandae labore?</h4>
+                            <h3 class="mt-3 text-center"><b>{{postDetail.title}}</b></h3>
+                            <h4 class="pl-3 pr-3">
+                                {{postDetail.body}}
+                            </h4>
                             <div class="row body grid-container">
                                 <div class="col-sm-3 col-md-3 username">
                                     <div class="row ">
@@ -37,14 +24,14 @@
                                         </div>
                                         <div class="col-5">
                                             <p style="text-align: left;">
-                                                <span style="font-weight:500; font-size: 20px;">Username</span><a
-                                                    class="">sadxasdwasd</a>
+                                                <span style="font-weight:500; font-size: 20px;">{{postDetail.author.username}}</span><a
+                                                    class="">{{postDetail.author.email}}</a>
                                             </p>
                                         </div>
                                         <div class="col-4">
                                             <span class="text-white"
-                                                style="background-color: #041A60; padding: 4px; padding-left: 14px; padding-right: 14px; border-radius: 50px;">18:00</span>
-                                            <p class="mt-2" style="font-size: 11px; font-weight: 700;">dd-mm-yyyy</p>
+                                                style="background-color: #041A60; padding: 4px; padding-left: 14px; padding-right: 14px; border-radius: 50px;">{{postDetail.created |slice:11:16}}</span>
+                                            <p class="mt-2" style="font-size: 11px; font-weight: 700;">{{postDetail.created |slice:0:10}}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -70,8 +57,8 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col commentdiv shadow-sm collapse" id="viewcomment">
-                                    <div class="comment p-5 ">
+                                <div class="col-11 row mx-auto commentdiv p-3 p-md-5 shadow-sm collapse" id="viewcomment">
+                                    <div class="comment p-2 col-12 ">
                                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse sit
                                         <!-- reprehenderit cum eos eligendi nobis rerum itaque. Possimus iste tenetur quod
                                         officia dolorum, tempora quae qui reprehenderit deleniti ipsam! This paragraph
@@ -82,42 +69,40 @@
                                         ipsum dolor sit amet consectetur adipisicing elit. Iure natus rerum itaque.
                                         Eligendi est temporibus numquam, distinctio enim consequuntur ducimus
                                         perferendis rerum facilis ut, atque adipisci! Aspernatur culpa quam enim! -->
-                                        <div class="row body grid-container2">
-                                            <div class=" col-md-3">
-                                                <div class="commenticons2">
-                                                    <span class="mt-2 fa fa-thumbs-up mr-4" title="like"></span><span
-                                                        class="fa fa-comment mr-4" data-target="#subcommentpost"
-                                                        data-toggle="collapse" title="Comment"></span><span
-                                                        class="fa fa-thumbs-down mr-4" title="Unlike"></span>
-                                                    <span class="fa fa-eye" title="View comment"
-                                                        data-target="#subcomment" data-toggle="collapse"></span>
+                                    </div>
+                                    <div class="row col-12 body p-0">
+                                        <div class="m-auto col-md-6">
+                                            <div class="commenticons2 m-auto">
+                                                <span class="mt-2 fa fa-thumbs-up mr-4" title="like"></span><span
+                                                    class="fa fa-comment mr-4" data-target="#subcommentpost"
+                                                    data-toggle="collapse" title="Comment"></span><span
+                                                    class="fa fa-thumbs-down mr-4" title="Unlike"></span>
+                                                <span class="fa fa-eye" title="View comment"
+                                                    data-target="#subcomment" data-toggle="collapse"></span>
+                                            </div>
+                                            <div id="subcommentpost" class="collapse">
+                                                <input type="text" class="form-control">
+                                                <button class="btn btn-sm">Post</button>
+                                            </div>
+                                        </div>
+                                        <div class="m-auto col-md-6 row pt-3">
+                                            <div class="col-6 d-flex">
+                                                <div class="">
+                                                    <p style="text-align: right;">
+                                                        <span
+                                                        style="font-weight:500; font-size: 20px;">Username</span><a
+                                                        class="">sadxasdwasd</a>
+                                                    </p>
                                                 </div>
-                                                <div id="subcommentpost" class="collapse">
-                                                    <input type="text" class="form-control">
-                                                    <button class="btn btn-sm">Post</button>
+                                                <div class="clearfix ml-2" style="overflow: auto; ">
+                                                    <img class="img" src="./assets/image/icons8.png" alt="">
                                                 </div>
                                             </div>
-                                            <div class="col-md-6 mt-4">
-                                                <div style="float: right;">
-                                                    <span class="text-white"
-                                                        style="background-color: #041A60; padding: 4px; padding-left: 14px; padding-right: 14px; border-radius: 50px;">18:00</span>
-                                                    <p class="mt-2" style="font-size: 11px; font-weight: 700;">
-                                                        dd-mm-yyyy</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mt-3">
-                                                <div class="row">
-                                                    <div class="col-5">
-                                                        <p style="text-align: right;">
-                                                            <span
-                                                                style="font-weight:500; font-size: 20px;">Username</span><a
-                                                                class="">sadxasdwasd</a>
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-3 clearfix" style="overflow: auto; ">
-                                                        <img class="img" src="./assets/image/icons8.png" alt="">
-                                                    </div>
-                                                </div>
+                                            <div class="col-6">
+                                                <span class="text-white"
+                                                    style="background-color: #041A60; padding: 4px; padding-left: 14px; padding-right: 14px; border-radius: 50px;">18:00</span>
+                                                <p class="mt-2" style="font-size: 11px; font-weight: 700;">
+                                                    dd-mm-yyyy</p>
                                             </div>
                                         </div>
                                     </div>
