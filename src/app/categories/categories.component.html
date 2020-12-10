@@ -1,18 +1,29 @@
 <!-- <p>categories works!</p> -->
 <app-header></app-header>
-<div class="container mt-4 p-5">
+<div class="container mt-2 p-1 p-md-3">
   <app-navbar></app-navbar>
-  <div class="row p-3">
-    <div class="shadow-sm text-center mx-auto   rounded-circle">
-        <img src="../../assets/sqicollege.png" class="mt" width="70px" alt="">
+  <div class="row mt-n4">
+    <!-- <form action=""> -->
+    <div class="col-11 d-lg-none mx-auto form-group">
+      <input type="text" class="form-control" placeholder="Search...">
     </div>
-    <div class="col-12 col-md-12 bg-white  shadow-sm carts-height">
-        <div class="row p-3 mt-3">
-          <!-- <div class=""> -->
-            <div class="col-sm-6  text-xs-center col-md-3 mx-auto" *ngFor="let carts of isArrayCategories">
-                <button type="button" class="btn" routerLink="/categories/sub-categories">{{carts}}</button>
+    <!-- </form> -->
+    
+    <div class="p-4 bg-white text-center mx-auto rounded-circle topImg">
+        <img src="../../assets/sqicollege.png" width="70px" alt="SQI">
+    </div>
+    <div class="col-12 p-3 p-md-5 bg-white  shadow-sm">
+        <div class="row p-3 mt-5">
+
+              <div *ngFor="let carts of isArrayCategories"  class="col-md-3 col-6 text-center mx-auto rounded">
+                <div routerLink="/categories/sub-categories" class=" shadow card categoryCard mb-5">
+                  <img src="../../assets/image/dark.jpg" class="categoryImage rounded-top">
+                  <div class="card-body small p-md-4 p-3 cardText">
+                    <b>{{carts}}</b>
+                  </div>
+                </div>
               </div>
-            <!-- </div> -->
+
         </div>
     </div>
   </div>
