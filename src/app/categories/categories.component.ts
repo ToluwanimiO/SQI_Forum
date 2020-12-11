@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-public isArrayCategories = ['Software','Hardware','Web development','Python','Django','Laptop','Computer','Digital-Maketing','Sofware','Hardware','Web','Python','Django','Laptop','Computer','Digital','Hardware','Web development','Python','Django'];
+public isArrayCategories = ['Sofware','Hardware','Web development','Python','Django','Laptop','Computer','Digital-Maketing','Sofware','Hardware','Web','Python','Django','Laptop','Computer','Digital','Hardware','Web development','Python','Django'];
   constructor() { }
 
   ngOnInit(): void {

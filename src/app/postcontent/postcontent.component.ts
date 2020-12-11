@@ -10,8 +10,7 @@ import { PostserviceService } from '../postservice.service';
 export class PostcontentComponent implements OnInit {
 
   constructor(public actRoute: ActivatedRoute, public postService:PostserviceService) { }
-  public postDetail;  
-  public condition = true;
+  public postDetail;
   ngOnInit(): void {
     let slug = this.actRoute.snapshot.params.slug
     let id = this.actRoute.snapshot.params.id
@@ -19,11 +18,6 @@ export class PostcontentComponent implements OnInit {
       this.postDetail = data;
       console.log(data)
     })
-  }
-
-  handleCondition = () =>{
-    this.condition = !this.condition
-    
   }
 
 }

@@ -1,14 +1,16 @@
-.text-signin{
-  color: #021042 !important;
-  border-radius: 5px;
+/* .btn-signin{
+  background:linear-gradient(to bottom, darkblue,#041e04);
+  color: white !important;
+  border-radius: 15px 15px 15px 15px;
   padding: 0.4rem;
 }
-.text-signup{
-  border-radius: 5px;
-  color: #021042 !important;
+.btn-signup{
+  border: 2px solid #041e04;
+  border-radius: 15px 15px 15px 15px;
+  color: black !important;
   box-shadow: none;
   padding: 0.3rem;
-}
+} */
 /* .btn-signup:hover{
   background:linear-gradient(to bottom, darkblue,#181c24fd);
   color: white !important;
@@ -16,7 +18,7 @@
 /* .btn-signin:hover{
   background: inherit;
   border: 2px solid #2b2d30fd;
-  border-radius: 5px;
+  border-radius: 15px 15px 15px 15px;
   box-shadow: none;
   color: darkblue !important;
 } */

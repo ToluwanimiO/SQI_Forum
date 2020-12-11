@@ -1,20 +1,20 @@
-.navRow{
-  height: 150px;
-}
 .home-navber{
-  background-color: #021042;
-  border-radius: 5px;
+  background:linear-gradient(to bottom, darkblue,#041e04);
+  border-radius: 20px;
   color: white;
   position: -webkit-sticky;
   position: sticky;
   top: 80px;
+  /* padding: 5px; */
+  /* background-color: #cae8ca; */
+  /* border: 2px solid #4CAF50; */
 }
 .form-control{
   min-width: 450px !important;
   height: 30px;
+  border-radius: 50px !important;
   box-shadow: none;
   border: none;
-  border-radius: 2px!important;
 }
 .text-size{
   font-size: 14px !important;
@@ -40,6 +40,3 @@
 /* .search-input{
   width: 250%;
 } */
-.buttom-icon{
-  color: #021042 !important;
-}

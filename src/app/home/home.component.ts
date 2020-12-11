@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { PostserviceService } from '../postservice.service';
 import { CategoryService } from '../services/category.service';
@@ -10,26 +11,11 @@ import { CategoryService } from '../services/category.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
-  // public isHomepageArray = [
-
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'bamm', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'booms', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           ];
+    public msg = true;
     public isHomepageArray=[];
     public isCategoriesArray=['Tech','football','ICT','WebPrograming','Software','Tech','football','ICT','WebPrograming','Software','Tech','football','ICT','WebPrograming','Software']
     public categories = [];
-    constructor(public categoryService: CategoryService, public postService:PostserviceService,public router:Router) { }
+    constructor(public categoryService: CategoryService, public snackbar:MatSnackBar, public postService:PostserviceService,public router:Router) { }
 
   ngOnInit(): void {
     // .....this is just for testing oooo from joshua
@@ -41,10 +27,20 @@ export class HomeComponent implements OnInit {
       console.log(data);
       // this.isCategoriesArray = data
      })
-     this.postService.retrieveLists().subscribe(data=>{
+     this.snackbar
+     this.postService.retrieveLists().subscribe(data =>{
        this.isHomepageArray = data;
+        this.msg = false;
+       this.snackbar.open('Back online','Dismiss',{
+        duration:3000
+      });
        console.log(this.isHomepageArray)
-      })
+      },(err:HttpErrorResponse) =>{
+        if(err){
+          this.snackbar.open('Disconnected','Dismiss',{});
+          console.log(err)
+        }
+      });
     // console.log(ff);
 
 

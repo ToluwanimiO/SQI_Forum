@@ -2,53 +2,33 @@
 <!-- #this navbar is for desktop i will create another one for the mobile downward
     #this second navbar that contain the search bar
 -->
-<div class="row navRow">
-  <div class="d-none d-lg-block w-100 my-auto">
-    <nav class="navbar mt-2 home-navber p-1 navbar-expand-md navbar-light">
-      <div class="container-fluid w-100">
-        <button type="button" routerLink="/" class="navbar-brand text-white text-size btn btn-link">Home</button>
-        <div><a href="" routerLink="/categories" class="navbar-brand text-white text-size mr-5">Categories</a></div>
-        <div>
-          <form class="form-inline justify-content-center">
-            <input class="form-control col-md-12 mx-auto ml-sm-5"  type="text" placeholder="Search">
-            <!-- <button class="btn btn-success" type="submit">Search</button> -->
-          </form>
-        </div>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a href="" class="nav-link text-white">Ask a Question?</a>
-          </li>
-          <li class="nav-item">
-            <a routerLink="/create" class="nav-link text-white"><span class=""><i class="fa fa-plus" ></i></span></a>
-          </li>
-          <li class="nav-item">
-            <a href="" class="nav-link"></a>
-          </li>
-        </ul>
+<div class="d-none d-lg-block home-navber">
+  <nav class="navbar mt-4 navbar-expand-md navbar-light" style="height: 40px;">
+    <div class="container-fluid">
+      <button type="button" routerLink="/" class="navbar-brand text-white text-size btn btn-link">Home</button>
+      <div><a href="" routerLink="/categories" class="navbar-brand text-white text-size mr-5">Categories</a></div>
+      <div>
+        <form class="form-inline justify-content-center">
+          <input class="form-control search-input col-md-12 mx-auto ml-sm-5"  type="text" placeholder="Search">
+          <!-- <button class="btn btn-success" type="submit">Search</button> -->
+        </form>
       </div>
-    </nav>
-  </div>
-</div>
-
-
-<div class="d-lg-none bg-white fixed-bottom d-sm-none bottomNav p-0 shadow border container-fluid">
-  <nav class="nav nav-tabs p-0 nav-stacked text-center small nav-justified">
-    <button routerLink="/" class="buttomLinks ml-0 mr-0 mx-auto p-0 buttom-icon nav-link btn btn-light small btn-sm" href="#">
-      <i class="fa fa-home"></i> <br/>
-      Home
-    </button>
-    <button routerLink="/categories" class="buttomLinks ml-0 mr-0 mx-auto buttom-icon p-0 nav-link btn btn-light small btn-sm" href="#">
-      <i class="fa fa-list-alt"></i> <br/>
-      Categories
-    </button>
-    <button class="buttomLinks ml-0 mr-0 mx-auto p-0 nav-link btn buttom-icon btn-light small btn-sm" href="#">
-      <i class="fa fa-question"></i> <br/>
-      Ask a Question
-    </button>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a href="" class="nav-link text-white">Ask a Question?</a>
+        </li>
+        <li class="nav-item">
+          <a routerLink="/create" class="nav-link text-white"><span class=""><i class="fa fa-plus" ></i></span></a>
+        </li>
+        <li class="nav-item">
+          <a href="" class="nav-link"></a>
+        </li>
+      </ul>
+    </div>
   </nav>
 </div>
 <!-- for mobile home nav -->
-  <!-- <div class="d-block  mobile-homenavber">
+  <div class="d-block d-lg-none mobile-homenavber">
       <div class="row justify-content-center">
           <div class="col-3 col-md-3">
               <button type="button" routerLink="/" class="text-white text-size btn btn1-mobile">Home</button>
@@ -63,5 +43,5 @@
             <button type="button" routerLink="/create" class="ml-3 text-white text-size btn btn-primary btn2-mobile"><i class="fa fa-plus"></i></button>
           </div>
       </div>
-  </div> -->
+  </div>
 

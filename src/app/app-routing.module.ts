@@ -11,10 +11,12 @@ import { HomeComponent } from './home/home.component';
 import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
 import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
 import { PostcontentComponent } from './postcontent/postcontent.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 
 const routes: Routes = [
-  {path:'', redirectTo:'/home', pathMatch:'full'},
+  {path:'', redirectTo:'/landingPage', pathMatch:'full'},
+  {path:'landingPage', component:LandingpageComponent},
   {path:"signIn",component:SignInComponent},
   {path:"signUp",component:SignUpComponent},
   {path:"signUp2",component:SignUpPhase2Component},
@@ -22,18 +24,17 @@ const routes: Routes = [
   {path: "create", component: CreatnewpostComponent},
   {path: "postcontent/:slug/:id", component: PostcontentComponent},
   {path:'home', component:HomeComponent},
-  
   {path:'categories', children:[
       {path:'', component:CategoriesComponent},
       {path:'sub-categories', component:SubCategoriesComponent}
   ]},
-  
+
 ]
 // =======
 
 // const routes: Routes = [
 //   { path: '', redirectTo: "/home", pathMatch: 'full' },
-  
+
 // ];
 // >>>>>>> cfd38875c97c4abb6be2631feb2f91c5875f299a
 

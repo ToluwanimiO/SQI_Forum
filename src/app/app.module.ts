@@ -11,6 +11,7 @@ import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignUpPhase2Component } from './sign-up-phase2/sign-up-phase2.component';
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import {MatCardModule} from '@angular/material/card';
+import {MatButtonModule} from '@angular/material/button';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { UsernameValidatorDirective } from './directives/username-validator.directive';
 import { HttpClientModule } from '@angular/common/http';
@@ -22,7 +23,8 @@ import { SubCategoriesComponent } from './sub-categories/sub-categories.componen
 import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
 import { PostcontentComponent } from './postcontent/postcontent.component';
 import { PostfilterPipe } from './pipes/postfilter.pipe';
-import { FooterComponent } from './footer/footer.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 // import { FormsModule } from '@angular/forms';
 // import { HttpClientModule} from '@angular/common/http';
 @NgModule({
@@ -41,7 +43,7 @@ import { FooterComponent } from './footer/footer.component';
     CreatnewpostComponent,
     PostcontentComponent,
     PostfilterPipe,
-    FooterComponent
+    LandingpageComponent
   ],
 // =======
 // import { HomeComponent } from './home/home.component';
@@ -72,7 +74,7 @@ import { FooterComponent } from './footer/footer.component';
 // @NgModule({
 //   declarations: [
 //     AppComponent,
-    
+
 // >>>>>>> cfd38875c97c4abb6be2631feb2f91c5875f299a
 //   ],
   imports: [
@@ -84,6 +86,9 @@ import { FooterComponent } from './footer/footer.component';
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
+    MatButtonModule,
+    MatSnackBarModule,
+
 // =======
 //     FormsModule,
 // >>>>>>> e34fcb97bd888f542cfeaeea76afd6515cb42391
