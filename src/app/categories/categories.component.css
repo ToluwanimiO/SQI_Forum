@@ -1,11 +1,37 @@
-.tr-style{
-  border-bottom: 1px solid rgb(236, 236, 236);
+.topImg{
+  margin-bottom: -4rem;
+  z-index: 1;
 }
-/* @media  (max-width: 280px) { */
-  @media screen and (max-width: 600px) {
-    .carts-height{
-      height: 500px;
-      overflow:auto;
-    }
-  }
-/* } */
+
+.form-control{
+  box-shadow: none !important;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-radius:0px !important;
+}
+.form-control:focus{
+  border-bottom: 2px solid #021042;
+  border-radius:0px !important;
+}
+
+.categoryImage{
+  height: 160px;
+	border-top-right-radius: 5px !important;
+	border-top-left-radius: 5px !important;
+}
+
+.categoryCard{
+  border: none;
+  outline: none;
+  cursor: pointer;
+	border-radius: 5px !important;
+	border: none !important;
+	/* width: 200px; */
+}
+
+@media only screen and (min-width: 1000px){
+	.cardText{
+		font-size: larger;
+	}
+}

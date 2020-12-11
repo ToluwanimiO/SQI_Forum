@@ -1,48 +1,36 @@
 <app-header></app-header>
-<div class="container p-5 mt-4 bg-white">
-  <app-navbar></app-navbar>
-  <div class="card card-style mt-3">
-      <div class="card-body" >
+  
+  <div class="container p-md-5 p-4">
+    <app-navbar></app-navbar>
+  <div class="row">
+    <div class="bg-white col-xl-9 col-lg-8 col-md-7 rounded border p-4">
+      <div *ngFor="let item of isHomepageArray" class="clearfix p-2 m-2 border-bottom">
+        
+        <h5><a (click)="viewPostDetails(item.slug+'/'+item.id)" class="text-dark titleLink font-weight-bold">{{item.title}}</a></h5>
+        <span class="small text-muted mr-2">by {{item.author.username}}&nbsp; |</span>
+        <span class="small text-muted ">{{item.category.name}}</span>
+        <span class="text-primary fa fa-thumbs-up float-right mr-3">{{item.upvote}}</span>
+        <span class="fa text-danger fa-comment-o float-right mr-4">{{item.comment_count}}</span>
       </div>
-  </div>
-  <div class="row mt-n5 p-3 justify-content-center">
-      <!-- <div class="col-12 col-lg-12 "> -->
-        <div class="table-responsive">
-            <table class="table table-borderless table-hover">
-                <thead class="thead t-radius border-radius circle card-body" >
-                  <tr>
-                    <th class="th dropdown">Topic</th>
-                    <th class="category-hover">
-                        <div class="dropdown">
-                          <div class="dropdown-toggle" data-toggle="dropdown">
-                            CATEGORIES
-                          </div>
-                          <div class="dropdown-menu">
-                            <div class="drop-height">
-                              <a class="dropdown-item" href="#" *ngFor="let item of categories">
-                                {{item.name}}
-                              </a>
-                            </div>
-                          </div>
-                        </div>
-                    </th>
-                    <th class="dropdown">UPVOTE</th>
-                    <th class="dropdown">DATE</th>
-                    <th class="dropdown">REPLIES</th>
-                  </tr>
-                </thead>
-                <tbody class="tbody p-5" style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-                  <tr *ngFor="let item of isHomepageArray"class="tr-style">
-                    <td class="d-none d-lg-block"><div class="reduce-textdesktop"><a (click)="viewPostDetails(item.slug+'/'+item.id)" class="text-dark">{{item.title}}</a></div> </td>
-                    <td class="ml-1 d-block d-lg-none"><div class="reduce-text"><a (click)="viewPostDetails(item.slug+'/'+item.id)" class="text-secondary">{{item.title}}</a></div></td>
-                    <td class="hack">{{item.category.name}}</td>
-                    <td>{{item.upvotes_count}}</td>
-                    <td>{{item.created |slice:0:10}}</td>
-                    <td>{{item.comments_count}}</td>
-                  </tr>
-                </tbody>
-            </table>
+
+    </div>
+    <div class="col-xl-3 col-lg-4 col-md-5 d-none d-md-inline w-100 pr-0 row pl-4">
+      <div class="col-12 bg-white rounded border p-3">
+        <h4 class="mb-4">Hello stranger!</h4>
+        <p class="small mt-4 mb-4">
+          Welcome, to access the full features of SQI forum, you have to register login.
+        </p>
+        <button routerLink="signIn" class="mx-auto btn-sm btn text-white sidebtns">Sign In</button>
+        <button routerLink="signUp" class="mx-auto btn-sm float-right text-white btn sidebtns">Sign Up</button>
+      </div>
+      <div class="bg-white col-12 mt-2 rounded border p-3">
+        <div  *ngFor="let categories of categories">
+          <span>{{categories.name}}</span>
+          <button class="mx-auto btn-sm float-right btn text-white sidebtns font-weight-bold">2,300</button> <hr/>
         </div>
-      <!-- </div> -->
+      </div>
+    </div>
   </div>
 </div>
+
+<app-footer></app-footer>

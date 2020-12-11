@@ -4,8 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-// <<<<<<< HEAD
-// <<<<<<< HEAD
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { SignUpPhase2Component } from './sign-up-phase2/sign-up-phase2.component';
@@ -22,7 +20,9 @@ import { SubCategoriesComponent } from './sub-categories/sub-categories.componen
 import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
 import { PostcontentComponent } from './postcontent/postcontent.component';
 import { PostfilterPipe } from './pipes/postfilter.pipe';
+
 import {HttpConfigInterceptor} from './interceptors/http-config.interceptor';
+import { FooterComponent } from './footer/footer.component';
 // import { FormsModule } from '@angular/forms';
 // import { HttpClientModule} from '@angular/common/http';
 @NgModule({
@@ -40,7 +40,8 @@ import {HttpConfigInterceptor} from './interceptors/http-config.interceptor';
     SubCategoriesComponent,
     CreatnewpostComponent,
     PostcontentComponent,
-    PostfilterPipe
+    PostfilterPipe,
+    FooterComponent
   ],
 // =======
 // import { HomeComponent } from './home/home.component';

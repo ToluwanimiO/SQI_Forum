@@ -1,165 +1,133 @@
 <app-header></app-header>
-<div class="container mt-5 p-4">
-    <div class="row">
-        <div class="col">
-            <div class="row">
-                <div class="col mt-3 d-flex postbodydiv shadow-sm">
-                    <button routerLink="/" class="fas fa-angle-double-right mt-2 mr-4 prefix backbtn"></button>
-                    <p class="mt-4">{{postDetail.title}} </p>
+
+<div class="container mt-5 pt-5">
+    <div class="row p-0">
+        <div class="col-md-9 col-lg-10">
+            <div class="col-12  mb-3 bg-white mx-auto border rounded p-0">
+                <div class="border-bottom">
+                    <button class="fa fa-angle-double-left btn btn-light mr-2" routerLink="/home" ></button>
+                    <span class="small font-weight-bold">{{postDetail.title}} </span>
+                </div>
+                <div class="p-3 postDiv">
+                    {{postDetail.body}} <br/> <br/>
+    
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/><br/>
+    
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/><br/>
+    
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/>
+                </div>
+                <div class="row p-3">
+                    <div class="col-md-6 d-flex">
+                        <div class="d-flex border avatarDiv pr-2 rounded">
+                            <img class="smallAvatar" src="../../assets/profile.png" alt="">
+                            <div class="m-auto">
+                                <h4 class="font-weight-bold mb-n2">{{postDetail.author.username}}</h4>
+                                <small class="small">{{postDetail.author.email}}</small>
+                            </div>
+                        </div>
+                        <div class="ml-2 small mt-1">
+                            <span class="badge badge-danger p-1 mx-auto">{{postDetail.created |slice:11:16}}</span>
+                            <p class="small">{{postDetail.created |slice:0:10}}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mx-auto">
+                        <div class="reactionDiv p-2 rounded my-auto ml-auto">
+                            <i class="fa mr-4 ml-3" [class.fa-thumbs-up]="!condition" [class.fa-thumbs-o-up]="condition" (click)="handleCondition()">
+                                <sup class="badge rounded-pill badge-primary">11</sup>
+                            </i>
+                            <i class="fa fa-comment-o mr-4" data-toggle="collapse" data-target="#maincomments">
+                                <sup class="badge rounded-pill badge-danger">1</sup>
+                            </i>
+                            <i class="fa fa-mail-forward mr-3"></i>
+                        </div>
+                    </div>
+                    <div class="d-flex col-12 mt-1">
+                        <input type="text" placeholder="Type Reply here" class="form-control">
+                        <button class="fa fa-send-o ml-2 sendButton btn text-white"></button>
+                    </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col postdiv">
-                    <div class="row">
-                        <div class="col-12 col-md-12">
-                            <h3 class="mt-3 text-center"><b>{{postDetail.title}}</b></h3>
-                            <h4 class="pl-3 pr-3">
-                                {{postDetail.body}}
-                            </h4>
-                            <div class="row body grid-container">
-                                <div class="col-sm-3 col-md-3 username">
-                                    <div class="row ">
-                                        <div class="col-3 clearfix" style="overflow: auto; ">
-                                            <img class="img" src="./assets/image/icons8.png" alt="">
-                                        </div>
-                                        <div class="col-5">
-                                            <p style="text-align: left;">
-                                                <span style="font-weight:500; font-size: 20px;">{{postDetail.author.username}}</span><a
-                                                    class="">{{postDetail.author.email}}</a>
-                                            </p>
-                                        </div>
-                                        <div class="col-4">
-                                            <span class="text-white"
-                                                style="background-color: #041A60; padding: 4px; padding-left: 14px; padding-right: 14px; border-radius: 50px;">{{postDetail.created |slice:11:16}}</span>
-                                            <p class="mt-2" style="font-size: 11px; font-weight: 700;">{{postDetail.created |slice:0:10}}</p>
-                                        </div>
+    
+    
+            <div id="maincomments" class="collapse col-11 mb-3 pb-3 mx-auto border bg-white rounded p-0">
+                <div class="p-3">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque architecto ad repellendus. Dolorem, harum. Nam eveniet atque voluptatum iste velit hic veritatis non labore esse. Commodi expedita adipisci eius impedit!
+                </div>
+                <div class="row p-3">
+                    <div class="col-md-6 d-flex">
+                        <div class="d-flex border avatarDiv pr-2 rounded">
+                            <img class="smallAvatar" src="../../assets/profile.png" alt="">
+                            <div class="m-auto">
+                                <h4 class="font-weight-bold mb-n2">Erin Baker</h4>
+                                <small class="small">oyerindejoshua133@gmail.com</small>
+                            </div>
+                        </div>
+                        <div class="ml-2 small mt-1">
+                            <span class="badge badge-danger p-1 mx-auto">18:46</span>
+                            <p class="small">29-Jan-20</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mx-auto">
+                        <div class="reactionDiv p-2 rounded text-white my-auto ml-auto">
+                            <i class="fa fa-thumbs-o-up mr-4 ml-3" [class.fa-thumbs-up]="!condition" [class.fa-thumbs-o-up]="condition" (click)="handleCondition()">
+                                <sup class="badge rounded-pill badge-primary">11</sup>
+                            </i>
+                            <i class="fa fa fa-comment-o mr-4" data-toggle="collapse" data-target="#subcomments">
+                                <sup class="badge rounded-pill badge-danger">1</sup>
+                            </i>
+                            <i class="fa fa fa-mail-forward mr-3"></i>
+                        </div>
+                    </div>
+    
+    
+                    <!-- sub-comment -->
+                    <div id="subcomments" class="collapse col-md-11 ml-1 ml-md-auto mb-3 border-left p-0 mt-3">
+                        <div class="p-3">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque architecto ad repellendus. Dolorem, harum. Nam eveniet atque voluptatum iste velit hic veritatis non labore esse. Commodi expedita adipisci eius impedit!
+                        </div>
+                        <div class="row p-3">
+                            <div class="col-md-6 d-flex">
+                                <div class="d-flex border avatarDiv pr-2 rounded">
+                                    <img class="smallAvatar" src="../../assets/profile.png" alt="">
+                                    <div class="m-auto">
+                                        <h4 class="font-weight-bold mb-n2">Felix Joy</h4>
+                                        <small class="small">felixadegboyega2019@gmail.com</small>
                                     </div>
                                 </div>
-                                <div class="col-sm-6 col-md-6">
-                                </div>
-                                <div class="col-sm-3 col-md-3">
-                                    <div class="commenticons text-center mt-2">
-                                        <span title="like" class="mt-2 fa fa-thumbs-up mr-5"></span>
-                                        <span title="Comment" data-target="#comment" data-toggle="collapse"
-                                            class="fa fa-comment mr-5"></span>
-                                        <span title="Unlike" class="fa fa-thumbs-down"></span>
-                                    </div>
+                                <div class="ml-2 small mt-1">
+                                    <span class="badge badge-danger p-1 mx-auto">18:46</span>
+                                    <p class="small">29-Jan-20</p>
                                 </div>
                             </div>
-                            <div class="row mx-auto">
-                                <div class="col-md-10 mt-5">
-                                    <div id="comment" class="collapse">
-                                        <input type="text" class="form-control">
-                                        <button class="btn btn-sm">Post</button>
-                                        <button class="btn btn-sm" data-target="#viewcomment"
-                                            data-toggle="collapse">View Post</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-11 row mx-auto commentdiv p-3 p-md-5 shadow-sm collapse" id="viewcomment">
-                                    <div class="comment p-2 col-12 ">
-                                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias esse sit
-                                        <!-- reprehenderit cum eos eligendi nobis rerum itaque. Possimus iste tenetur quod
-                                        officia dolorum, tempora quae qui reprehenderit deleniti ipsam! This paragraph
-                                        has an outline 15px side the border edge. Lorem ipsum dolor sit amet
-                                        consectetur adipisicing elit. Esse asperiores et exercitationem, consequatur
-                                        perspiciatis voluptas quibusdam error, ipsam ipsum praesentium consectetur nisi
-                                        nihil provident. Possimus doloribus saepe doloremque iusto aspernatur? Lorem
-                                        ipsum dolor sit amet consectetur adipisicing elit. Iure natus rerum itaque.
-                                        Eligendi est temporibus numquam, distinctio enim consequuntur ducimus
-                                        perferendis rerum facilis ut, atque adipisci! Aspernatur culpa quam enim! -->
-                                    </div>
-                                    <div class="row col-12 body p-0">
-                                        <div class="m-auto col-md-6">
-                                            <div class="commenticons2 m-auto">
-                                                <span class="mt-2 fa fa-thumbs-up mr-4" title="like"></span><span
-                                                    class="fa fa-comment mr-4" data-target="#subcommentpost"
-                                                    data-toggle="collapse" title="Comment"></span><span
-                                                    class="fa fa-thumbs-down mr-4" title="Unlike"></span>
-                                                <span class="fa fa-eye" title="View comment"
-                                                    data-target="#subcomment" data-toggle="collapse"></span>
-                                            </div>
-                                            <div id="subcommentpost" class="collapse">
-                                                <input type="text" class="form-control">
-                                                <button class="btn btn-sm">Post</button>
-                                            </div>
-                                        </div>
-                                        <div class="m-auto col-md-6 row pt-3">
-                                            <div class="col-6 d-flex">
-                                                <div class="">
-                                                    <p style="text-align: right;">
-                                                        <span
-                                                        style="font-weight:500; font-size: 20px;">Username</span><a
-                                                        class="">sadxasdwasd</a>
-                                                    </p>
-                                                </div>
-                                                <div class="clearfix ml-2" style="overflow: auto; ">
-                                                    <img class="img" src="./assets/image/icons8.png" alt="">
-                                                </div>
-                                            </div>
-                                            <div class="col-6">
-                                                <span class="text-white"
-                                                    style="background-color: #041A60; padding: 4px; padding-left: 14px; padding-right: 14px; border-radius: 50px;">18:00</span>
-                                                <p class="mt-2" style="font-size: 11px; font-weight: 700;">
-                                                    dd-mm-yyyy</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="subcomment mt-3 collapse" id="subcomment">
-                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque maxime
-                                        dolorum perspiciatis officia aperiam. Ipsa placeat perspiciatis odio eaque,
-                                        error mollitia sequi sapiente molestiae veniam ullam accusantium laborum quo
-                                        ducimus. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Expedita non
-                                        laboriosam, dolorem necessitatibus facilis itaque reprehenderit dolore dolorum
-                                        molestiae numquam ex alias quaerat minima beatae! Sequi quod iusto accusantium
-                                        amet?
-                                        ddsf
-                                        <div class="row body grid-container2">
-                                            <div class=" col-md-3">
-                                                <div class="commenticons2">
-                                                    <span class="mt-3 fa fa-thumbs-up mr-5" title="Like"></span><span
-                                                        class="fa fa-comment mr-5" title="Comment"></span><span
-                                                        class="fa fa-thumbs-down" title="Unlike"></span>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 mt-4">
-                                                <div style="float: right;">
-                                                    <span class="text-white"
-                                                        style="background-color: #041A60; padding: 4px; padding-left: 14px; padding-right: 14px; border-radius: 50px;">18:00</span>
-                                                    <p class="mt-2" style="font-size: 11px; font-weight: 700;">
-                                                        dd-mm-yyyy</p>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3 mt-3">
-                                                <div class="row">
-                                                    <div class="col-5">
-                                                        <p style="text-align: right;">
-                                                            <span
-                                                                style="font-weight:500; font-size: 20px;">Username</span><a
-                                                                class="">sadxasdwasd</a>
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-3 clearfix" style="overflow: auto; ">
-                                                        <img class="img" src="./assets/image/icons8.png" alt="">
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                            <div class="col-md-6 mx-auto">
+                                <div class="reactionDiv p-2 rounded text-white my-auto ml-auto">
+                                    <i class="fa fa-thumbs-o-up mr-4 ml-3" [class.fa-thumbs-up]="!condition" [class.fa-thumbs-o-up]="condition" (click)="handleCondition()">
+                                        <sup class="badge rounded-pill badge-primary">11</sup>
+                                    </i>
+                                    <i class="fa fa fa-mail-forward mr-3"></i>
                                 </div>
                             </div>
                         </div>
                     </div>
+    
+                </div>
+                <div class="d-flex col-12 ml-auto mt-1 p-0 pr-3 pl-3">
+                    <input type="text" placeholder="Type Reply here" class="form-control">
+                    <button class="fa fa-send-o ml-2 sendButton btn text-white"></button>
                 </div>
             </div>
-            <div class="row">
-                <div class="col mt-3 d-flex postbodydowndiv shadow-sm">
-                    <div style="height: 45px;">
+        </div>
 
-                    </div>
-                </div>
+
+        <div class="col-3 pl-0 col-lg-2 d-none d-md-inline">
+            <div class=" bg-white rounded p-3 border">
+                <h4>Post from the same Category</h4><hr/>
+                <h4>Post from the same Category</h4><hr/>
             </div>
         </div>
     </div>
 </div>
+
+
+<app-footer></app-footer>
