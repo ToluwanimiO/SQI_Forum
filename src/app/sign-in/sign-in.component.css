@@ -1,12 +1,19 @@
 .round{
-    border-radius: 1.5em;
-    background-color: #F6F6F6;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-    border:0px;
-    margin-top: -50px;
+    border-radius: 0.5em;
+    margin-top: 100px;
     padding-top: 70px;
-    /* z-index: -1; */
 }
+@media (max-width:767px){
+    .round{
+        margin-top: 10px;
+    }
+}
+/* @media  (min-width:280px){
+    .round{
+        margin-top: 30px;
+    }
+    
+} */
 .signText{
     margin-top: 20px;
     font-size: large;
@@ -14,19 +21,19 @@
 }
 .input{
     margin-top: 2em;
-    border-radius: 20px;
+    border-radius: 0.5em;
     padding: 1.6em;
-    background-color: #FBFBFB;
-    border: #7D88AB solid 1px;
+    background-color: #F5F5F5;
+    border: #E3E3E3 1px solid;
 }
 .input:focus{
     border: #7D88AB solid 1px;
     box-shadow: 0 0 0 0.1rem rgba(23, 50, 78, 0.25);
 }
 .signButton{
-    border-radius: 1.5em;
+    border-radius: 0.3em;
     font-weight: 500;
-    margin-top: 1em;
+    /* margin-top: 1em; */
     width: fit-content;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -45,24 +52,21 @@
 }
 .textEdit{
     font-weight: 500;
-    font-size: large;
-    padding-top: 3em;
+    font-size: 15px;
+    /* padding-top: 10px; */
 }
 .textColorBlue{
     color: #041A60;
 }
-.logoContainer{
-    border-radius: 50%;
-    background-color: #F6F6F6;
-    width: 100px;
-    height: 100px;
-    /* box-shadow: -1px -2px 5px rgba(0, 0, 0, 0.4); */
-    z-index: 100;
-    padding-top: 20px;
-    position: relative;
-    /* background-image: url('../../assets/sqicollege.png'); */
-}
 .linkBtn:focus, .linkBtn:hover,.linkBtn{
     cursor: pointer;
     outline: none;
+}
+.sigInBackground{
+    background-image: url('../../assets/sign-in-bg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: red;
+    height: 200px; */
 }

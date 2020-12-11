@@ -1,38 +1,38 @@
 .round{
-    border-radius: 1.5em;
-    background-color: #F6F6F6;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
-    border:0px;
-    margin-top: -50px;
-    padding-top: 70px;
-    /* z-index: -1; */
+    border-radius: 0.5em;
+    margin-top: 80px;
+    padding-top: 40px;
+}
+@media (max-width:767px){
+    .round{
+        margin-top: 5px;
+    }
 }
 .signText{
     font-size: large;
     font-weight: 500;
-    margin-top: 20px; 
 }
 .input{
-    margin-top: 1.2em;
-    border-radius: 20px;
-    padding: 1.2em;
-    background-color: #FBFBFB;
-    border: #7D88AB solid 1px;
+    margin-top: 2em;
+    border-radius: 0.5em;
+    padding: 1.4em;
+    background-color: #F5F5F5;
+    border: #E3E3E3 1px solid;
 }
 .input:focus{
     border: #7D88AB solid 1px;
     box-shadow: 0 0 0 0.1rem rgba(23, 50, 78, 0.25);
 }
 .signButton{
-    border-radius: 1.5em;
+    border-radius: 0.3em;
     font-weight: 500;
-    margin-top: 1em;
+    /* margin-top: 1em; */
     width: fit-content;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    font-size: large;
+    font-size: normal;
     background-color: #041A60;
     border: #041A60;
     color: white;
@@ -45,8 +45,8 @@
 }
 .textEdit{
     font-weight: 500;
-    font-size: large;
-    padding-top: 2em;
+    font-size: 13px;
+    /* padding-top: 2em; */
 }
 .textColorBlue{
     color: #041A60;
@@ -54,7 +54,7 @@
 .logoContainer{
     border-radius: 50%;
     background-color: #F6F6F6;
-    width: 100px;
+    width: 120px;
     height: 100px;
     /* box-shadow: -1px -2px 5px rgba(0, 0, 0, 0.4); */
     z-index: 100;
@@ -65,4 +65,12 @@
 .linkBtn:focus, .linkBtn:hover,.linkBtn{
     cursor: pointer;
     outline: none;
+}
+.sigInBackground{
+    background-image: url('../../assets/sign-in-bg.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* background-color: red;
+    height: 200px; */
 }

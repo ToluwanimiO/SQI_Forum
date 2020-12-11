@@ -11,7 +11,7 @@ export class PostserviceService {
   // /api/v1/post/create/
   // http://sqiforum.herokuapp.com/api/v1/post/create/
   public getCategories() {
-    return this.http.get<any>(`${this.baseUrl}/categories/`)
+    return this.http.get<any>(`${this.baseUrl}/categories/`,{observe:'response'})
   }
   public postText(posttext) {
     // return this.http.post<any>(`${this.baseUrl}/post/create`, text)

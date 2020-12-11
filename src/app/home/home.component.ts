@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PostserviceService } from '../postservice.service';
 import { CategoryService } from '../services/category.service';
+import { UsersService } from '../services/users.service';
 
 @Component({
   selector: 'app-home',
@@ -29,7 +30,7 @@ export class HomeComponent implements OnInit {
     public isHomepageArray=[];
     public isCategoriesArray=['Tech','football','ICT','WebPrograming','Software','Tech','football','ICT','WebPrograming','Software','Tech','football','ICT','WebPrograming','Software']
     public categories = [];
-    constructor(public categoryService: CategoryService, public postService:PostserviceService,public router:Router) { }
+    constructor(public categoryService: CategoryService, public postService:PostserviceService,public router:Router,public userService:UsersService) { }
 
   ngOnInit(): void {
     // .....this is just for testing oooo from joshua
@@ -44,6 +45,9 @@ export class HomeComponent implements OnInit {
      this.postService.retrieveLists().subscribe(data=>{
        this.isHomepageArray = data;
        console.log(this.isHomepageArray)
+      })
+      this.userService.getUserDetails().subscribe(userDetails=>{
+        console.log(userDetails)
       })
     // console.log(ff);
 

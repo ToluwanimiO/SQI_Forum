@@ -9,7 +9,10 @@
                         <!-- <div *ngFor="let c of categories">{{c.name}}</div> -->
                         <!-- <div></div> -->
                         <select formControlName="category" class="form-control mt-2">
-                            <option value={{c.id}} class="" *ngFor="let c of categories">{{c.name}}</option>
+                            <option value={{c.id}} class="" *ngFor="let c of categories">
+                                <span *ngIf="!loading">{{c.name}}</span>
+                            </option>
+                            <option disabled *ngIf="loading">Loading...</option>
                         </select>
                     </div>
                     <div class="col-md-9">
