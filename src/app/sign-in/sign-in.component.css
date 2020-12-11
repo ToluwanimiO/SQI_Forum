@@ -46,8 +46,8 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
 }
 .signButton:hover, .signButton:focus{
-    background-color: #041A60;
-    border: #041A60;
+    background-color: #021042;
+    border: #021042;
     box-shadow: none;
 }
 .textEdit{

@@ -23,8 +23,7 @@ import { PostfilterPipe } from './pipes/postfilter.pipe';
 
 import {HttpConfigInterceptor} from './interceptors/http-config.interceptor';
 import { FooterComponent } from './footer/footer.component';
-// import { FormsModule } from '@angular/forms';
-// import { HttpClientModule} from '@angular/common/http';
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,55 +42,15 @@ import { FooterComponent } from './footer/footer.component';
     PostfilterPipe,
     FooterComponent
   ],
-// =======
-// import { HomeComponent } from './home/home.component';
-// import { HeaderComponent } from './header/header.component';
-// import { NavbarComponent } from './navbar/navbar.component';
-// import { CategoriesComponent } from './categories/categories.component';
-// import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
-// import { FormsModule } from '@angular/forms';
-// import { HttpClientModule} from '@angular/common/http';
-// import { SignInComponent } from './sign-in/sign-in.component';
-
-// @NgModule({
-//   declarations: [
-//     AppComponent,
-//     HomeComponent,
-//     HeaderComponent,
-//     NavbarComponent,
-//     CategoriesComponent,
-//     SubCategoriesComponent,
-    // SignInComponent
-// >>>>>>> e34fcb97bd888f542cfeaeea76afd6515cb42391
-// =======
-
-// import { FormsModule, ReactiveFormsModule, } from '@angular/forms';
-
-// import { HttpClientModule } from '@angular/common/http';
-
-// @NgModule({
-//   declarations: [
-//     AppComponent,
-    
-// >>>>>>> cfd38875c97c4abb6be2631feb2f91c5875f299a
-//   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-// <<<<<<< HEAD
-// <<<<<<< HEAD
     MatCardModule,
     FormsModule,
     ReactiveFormsModule,
-// =======
-//     FormsModule,
-// >>>>>>> e34fcb97bd888f542cfeaeea76afd6515cb42391
-// =======
-//     FormsModule,
-//     ReactiveFormsModule,
-// >>>>>>> cfd38875c97c4abb6be2631feb2f91c5875f299a
-    HttpClientModule
+    HttpClientModule,
+    MatTooltipModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:HttpConfigInterceptor,multi:true}

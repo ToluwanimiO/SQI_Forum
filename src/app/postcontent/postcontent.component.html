@@ -43,8 +43,8 @@
                         </div>
                     </div>
                     <div class="d-flex col-12 mt-1">
-                        <input type="text" placeholder="Type Reply here" class="form-control">
-                        <button class="fa fa-send-o ml-2 sendButton btn text-white"></button>
+                        <input type="text" placeholder="Type Reply here" class="form-control" [(ngModel)]="text">
+                        <button class="fa fa-send-o ml-2 sendButton btn text-white" (click)="sendComment()"></button>
                     </div>
                 </div>
             </div>

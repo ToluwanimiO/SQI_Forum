@@ -7,7 +7,12 @@
   border-radius: 5px;
   color: #021042 !important;
   box-shadow: none;
-  padding: 0.3rem;
+  padding: 0.4rem;
+}
+.text-username{
+  font-size: x-large;
+  color: white !important;
+  
 }
 /* .btn-signup:hover{
   background:linear-gradient(to bottom, darkblue,#181c24fd);
