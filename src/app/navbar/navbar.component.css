@@ -12,9 +12,9 @@
 .form-control{
   min-width: 450px !important;
   height: 30px;
-  border-radius: 5px !important;
   box-shadow: none;
   border: none;
+  border-radius: 2px!important;
 }
 .text-size{
   font-size: 14px !important;

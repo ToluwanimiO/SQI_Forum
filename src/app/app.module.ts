@@ -22,6 +22,7 @@ import { SubCategoriesComponent } from './sub-categories/sub-categories.componen
 import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
 import { PostcontentComponent } from './postcontent/postcontent.component';
 import { PostfilterPipe } from './pipes/postfilter.pipe';
+import { FooterComponent } from './footer/footer.component';
 // import { FormsModule } from '@angular/forms';
 // import { HttpClientModule} from '@angular/common/http';
 @NgModule({
@@ -39,7 +40,8 @@ import { PostfilterPipe } from './pipes/postfilter.pipe';
     SubCategoriesComponent,
     CreatnewpostComponent,
     PostcontentComponent,
-    PostfilterPipe
+    PostfilterPipe,
+    FooterComponent
   ],
 // =======
 // import { HomeComponent } from './home/home.component';

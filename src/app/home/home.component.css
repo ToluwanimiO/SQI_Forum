@@ -38,7 +38,7 @@ body{
 }
 
 .sidebtns{
-	min-width: 80px !important;
+	min-width: 50px !important;
 	background-color: #2E3A58;
 	box-shadow: none !important;
 }
