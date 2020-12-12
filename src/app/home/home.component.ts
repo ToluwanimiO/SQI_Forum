@@ -18,13 +18,13 @@ export class HomeComponent implements OnInit {
   //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'booms', upvote:'200',date:'19-4-2019',views:28},
   //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
   //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
+  //                           {topic:'Lorem icategories:'hacks', upvote:'200',date:'19-4-2019',views:28},
+  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
+  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing'psum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
   //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
   //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
   //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
-  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
+  //                           {topic:'Lorem ipsum dolor sit aconsectetur adipisicing', , categories:'hacks', upvote:'200',date:'19-4-2019',views:28},
   //                           ];
     public isHomepageArray=[];
     public isCategoriesArray=['Tech','football','ICT','WebPrograming','Software','Tech','football','ICT','WebPrograming','Software','Tech','football','ICT','WebPrograming','Software']

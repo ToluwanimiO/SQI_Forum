@@ -23,6 +23,7 @@ import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
 import { PostcontentComponent } from './postcontent/postcontent.component';
 import { PostfilterPipe } from './pipes/postfilter.pipe';
 import { FooterComponent } from './footer/footer.component';
+import { ProfileComponent } from './profile/profile.component';
 // import { FormsModule } from '@angular/forms';
 // import { HttpClientModule} from '@angular/common/http';
 @NgModule({
@@ -41,7 +42,8 @@ import { FooterComponent } from './footer/footer.component';
     CreatnewpostComponent,
     PostcontentComponent,
     PostfilterPipe,
-    FooterComponent
+    FooterComponent,
+    ProfileComponent
   ],
 // =======
 // import { HomeComponent } from './home/home.component';

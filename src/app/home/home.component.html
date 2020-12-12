@@ -19,13 +19,13 @@
         <p class="small mt-4 mb-4">
           Welcome, to access the full features of SQI forum, you have to register login.
         </p>
-        <button routerLink="signIn" class="mx-auto btn-sm btn text-white sidebtns">Sign In</button>
-        <button routerLink="signUp" class="mx-auto btn-sm float-right text-white btn sidebtns">Sign Up</button>
+        <button routerLink="/signIn" class="mx-auto btn-sm btn text-white sidebtns">Sign In</button>
+        <button routerLink="/signUp" class="mx-auto btn-sm float-right text-white btn sidebtns">Sign Up</button>
       </div>
       <div class="bg-white col-12 mt-2 rounded border p-3">
-        <div  *ngFor="let categories of categories">
+        <div *ngFor="let categories of categories">
           <span>{{categories.name}}</span>
-          <button class="mx-auto btn-sm float-right btn text-white sidebtns font-weight-bold">2,300</button> <hr/>
+          <button class="mx-auto btn-sm float-right btn text-white sidebtns font-weight-bold">{{categories.post_count}}</button> <hr/>
         </div>
       </div>
     </div>
