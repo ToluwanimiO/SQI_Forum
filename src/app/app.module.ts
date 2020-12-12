@@ -20,10 +20,12 @@ import { SubCategoriesComponent } from './sub-categories/sub-categories.componen
 import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
 import { PostcontentComponent } from './postcontent/postcontent.component';
 import { PostfilterPipe } from './pipes/postfilter.pipe';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import {HttpConfigInterceptor} from './interceptors/http-config.interceptor';
 import { FooterComponent } from './footer/footer.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +42,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     CreatnewpostComponent,
     PostcontentComponent,
     PostfilterPipe,
-    FooterComponent
+    FooterComponent,
+    LandingpageComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatSnackBarModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:HttpConfigInterceptor,multi:true}
