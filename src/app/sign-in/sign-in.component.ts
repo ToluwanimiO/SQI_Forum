@@ -26,8 +26,9 @@ export class SignInComponent implements OnInit {
     // console.log(signedUser)
     this.signInService.verifyLogin(this.userSignIn.value).subscribe((res:any)=>{
       this.token=res.key
+      localStorage.setItem("Token",JSON.stringify(this.token))
       // route to home
-      this.router.navigate(["/"])
+      this.router.navigate(["/home"])
       console.log(this.token)
     },(err:HttpErrorResponse)=>{
       console.log(err)

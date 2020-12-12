@@ -12,10 +12,12 @@ import { SubCategoriesComponent } from './sub-categories/sub-categories.componen
 import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
 import { PostcontentComponent } from './postcontent/postcontent.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LandingpageComponent } from './landingpage/landingpage.component';
 
 
 const routes: Routes = [
-  {path:'', redirectTo:'/home', pathMatch:'full'},
+  {path:'', redirectTo:'/landingpage', pathMatch:'full'},
+  {path:'landingpage', component:LandingpageComponent},
   {path:"signIn",component:SignInComponent},
   {path:"signUp",component:SignUpComponent},
   {path:"signUp2",component:SignUpPhase2Component},

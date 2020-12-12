@@ -1,17 +1,24 @@
 <!-- <p>header works!</p> -->
 <nav class="navbar  navbar-expand-sm navbar-light bg-white shadow-sm fixed-top">
   <div class="container">
-      <a href="" class="navbar-brand"><img src="../../assets/sqi.jpg"  style="width: 40px;" alt=""> SQI FORUM</a>
+      <a routerLink="/" class="navbar-brand"><img src="../../assets/sqi.jpg"  style="width: 40px;" alt=""> SQI FORUM</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
         <span class="fa fa-bars"></span>
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto" *ngIf="!LoginStatus && loading">
           <li class="nav-item">
-            <a routerLink="/signIn" class="nav-link text-signin">Sign in</a>
+            <a routerLink="/signIn" class="nav-link text-signin">Sign In</a>
           </li>
           <li class="nav-item">
             <a routerLink="/signUp" class="nav-link text-signup">Sign Up</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto" *ngIf="LoginStatus && loading">
+          <li class="nav-item text-center rounded-circle card bg-secondary" style="width: 40px; height: 40px;">
+            <a class="nav-link text-username" matTooltip="{{userDet.username}}">{{userDet.username |slice:0:1}}</a>
+            <!-- <a class="nav-link text-username" data-toggle="popover" title="userDet.username" data-container="body" data-content="userDet.email">{{userDet.username |slice:0:1}}</a> -->
+            <!-- <a class="nav-link">{{userDet.email}}</a> -->
           </li>
         </ul>
       </div>

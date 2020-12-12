@@ -22,6 +22,7 @@ export class CreatnewpostComponent implements OnInit {
   public filterText;
   public posts = [];
   public categories;
+  public loading = true;
   // public test = ["hey", "gedu"]
 
   // ordered() {
@@ -46,7 +47,7 @@ export class CreatnewpostComponent implements OnInit {
       console.log(newPost)
       console.log(typeof(newNumber))
       this.postcate.postText(newPost).subscribe((res:any) => {
-        console.log(res);
+        console.log(res);                               
       },(err:HttpErrorResponse)=>{
         console.log(err);
       })
@@ -58,8 +59,10 @@ export class CreatnewpostComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.loading = true;
     this.postcate.getCategories().subscribe(a => {
-      this.categories = a;
+      this.loading= false
+      this.categories = a.body;
       console.log(this.categories)
     })
   }
