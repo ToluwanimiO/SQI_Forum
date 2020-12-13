@@ -1,7 +1,7 @@
+@import '../app.component.css';
 .postDiv{
     word-wrap: break-word;
 }
-
 
 .fa-angle-double-left{
     border-radius: 0% !important;

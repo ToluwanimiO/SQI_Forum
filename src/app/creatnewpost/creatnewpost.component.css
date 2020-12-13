@@ -1,5 +1,8 @@
-    textarea {
-    border-radius: 10px;
+
+@import '../app.component.css';
+textarea {
+    border-radius: 5px;
+    box-shadow: none !important;
     border: 1px solid #041A60;
     background-color: #F1F2F5;
     padding: 15px;
@@ -18,7 +21,8 @@ textarea:focus{
 input[type=text], select {
     background-color: #F1F2F5;
     border: 1px solid #041A60;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: none !important;
 
 }
 input:focus{
@@ -26,13 +30,14 @@ input:focus{
 }
  .shadowT {
     margin-top: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: none !important;
     background-color: #F6F6F6;
 }
 
 input[type=submit] {
     background-color: #3246C9;
-    border-radius: 10px;
+    border-radius: 5px;
     color: white;
     padding: 12px 20px;
     border: #041A60;
@@ -68,5 +73,6 @@ input[type=submit]:hover {
     top: 15px;
     padding-right: 20px;
     right: 20px;
-    border-radius: 10px;
+    border-radius: 5px;
+    box-shadow: none !important;
 }
