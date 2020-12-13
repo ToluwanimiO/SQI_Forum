@@ -19,6 +19,7 @@ export class PostcontentComponent implements OnInit {
   public id;
   public userEmail;
   public text="";
+  public reply_text="";
   public upvoteLength;
   public commentLength;
   ngOnInit(): void {
@@ -65,6 +66,20 @@ export class PostcontentComponent implements OnInit {
     },(err:HttpErrorResponse)=>{
       console.log(err)
     })
+  }
+  sendReply(comments_id){
+    let comment = {
+      email:this.userEmail,
+      body:this.reply_text
+    }
+    this.commentService.sendReply(comment,comments_id).subscribe(response=>{
+      console.log(response)
+      this.reply_text = ""
+      // this.commentLength = this.commentLength+1
+    },(err:HttpErrorResponse)=>{
+      console.log(err)
+    })
+    
   }
 
 }

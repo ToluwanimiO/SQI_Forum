@@ -11,4 +11,8 @@ export class CommentService {
   sendComment(comment,slug,id){
     return this.http.post<any>(`${this.baseUrl}/post/${slug}/${id}/comment/`,comment);
   }
+  sendReply(reply,id){
+    console.log(reply)
+    return this.http.post<any>(`${this.baseUrl}/comment/${id}/reply/`,reply);
+  }
 }
