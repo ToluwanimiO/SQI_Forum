@@ -9,13 +9,14 @@
                     <span class="small font-weight-bold">{{postDetail.title}} </span>
                 </div>
                 <div class="p-3 postDiv">
-                    {{postDetail.body}} <br/> <br/>
+                    <quill-view-html [content]="postDetail.body" theme="snow"></quill-view-html>
+                    <!-- {{postDetail.body}} <br/> <br/>
     
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/><br/>
     
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/><br/>
     
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/> -->
                 </div>
                 <div class="row p-3">
                     <div class="col-md-6 d-flex">
@@ -34,10 +35,10 @@
                     <div class="col-md-6 mx-auto">
                         <div class="reactionDiv p-2 rounded my-auto ml-auto">
                             <i class="fa mr-4 ml-3" [class.fa-thumbs-up]="!condition" [class.fa-thumbs-o-up]="condition" (click)="handleCondition()">
-                                <sup class="badge rounded-pill badge-primary">11</sup>
+                                <sup class="badge rounded-pill badge-primary">{{upvoteLength}}</sup>
                             </i>
                             <i class="fa fa-comment-o mr-4" data-toggle="collapse" data-target="#maincomments">
-                                <sup class="badge rounded-pill badge-danger">1</sup>
+                                <sup class="badge rounded-pill badge-danger">{{commentLength}}</sup>
                             </i>
                             <i class="fa fa-mail-forward mr-3"></i>
                         </div>

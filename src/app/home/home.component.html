@@ -34,7 +34,7 @@
           Words words words words words words words words words words words words words
         </p>
         <button class="mx-auto btn-sm btn text-white sidebtns">Edit Profile</button>
-        <button class="mx-auto btn-sm float-right text-white btn sidebtns">Log out</button>
+        <button class="mx-auto btn-sm float-right text-white btn sidebtns" (click)="logOut()">Log out</button>
       </div>
       <div class="bg-white col-12 mt-2 rounded border p-3">
         <span *ngIf="loadingCategories">

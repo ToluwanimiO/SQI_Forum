@@ -10,7 +10,7 @@ import { UsersService } from '../services/users.service';
 export class HeaderComponent implements OnInit {
 
   constructor(public userService: UsersService) { }
-  public loading =false;
+  public loading;
   public LoginStatus;
   public userDet;
   ngOnInit(): void {
@@ -21,6 +21,7 @@ export class HeaderComponent implements OnInit {
         console.log(userDetails)
     },(err:HttpErrorResponse)=>{
       this.LoginStatus = false;
+      this.loading = true;
       console.log(err)
     })
   }

@@ -1,24 +1,19 @@
     textarea {
-    border-radius: 20px;
-    border: 1px solid #041A60;
-    background-color: #F1F2F5;
-    padding: 15px;
-    height: 315px;
+    border-radius: 5px;
+    border: 0.5px solid #E5E5E5;
+    background-color: #F5F5F5;
+    /* padding: 15px; */
+    height: 285px;
 }
 
-textarea:focus{
-    outline: none;
-}
-
-.icons:focus{
-    outline: none;
-    background-color: #F6F6F6;
+.editorStyle {
+    background-color: #F5F5F5;
 }
 
 input[type=text], select {
-    background-color: #F1F2F5;
-    border: 1px solid #041A60;
-    border-radius: 50px;
+    background-color: #F5F5F5;
+    border: 0.3px solid #E5E5E5;
+    border-radius: 5px;
 
 }
 input:focus{
@@ -26,27 +21,35 @@ input:focus{
 }
  .shadowT {
     margin-top: 20px;
-    border-radius: 20px;
-    background-color: #F6F6F6;
+    border-radius: 5px;
+    background-color: #F3F3F3;
+    border: 1px solid grey ;
 }
 
 input[type=submit] {
-    background-color: #3246C9;
-    border-radius: 50px;
+    background-color: #041A60;
+    border-radius: 5px;
     color: white;
     padding: 12px 20px;
     border: #041A60;
     cursor: pointer;
-    box-shadow: #041A60;
-    margin-top: 5px;
-    box-shadow: 0 5px #666;
-  transform: translateY(4px);
+    /* box-shadow: #041A60; */
+    margin-top: 10px;
+    font-size: bold;
+}
 
+.editorStyle {
+    height: "200px";
 }
 
 input[type=submit]:hover {
     background-color: #041A60;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 5px #666; */
+    /* transform: translateY(4px); */
+}
+.btn:disabled{
+    cursor: none;
 }
 
 .input[type=submit]:active {
@@ -58,15 +61,16 @@ input[type=submit]:hover {
 .form-group {
     position: relative;  
   }
-  
 
-.icons {
+  .div {
     background-color: white;
-    height: 170px;
-    width: 57px;
-    position: absolute;
-    top: 15px;
-    padding-right: 20px;
-    right: 20px;
-    border-radius: 20px;
-}
+    border-radius: 5px;
+    border: 0.5px solid #F3F3F3;
+    height: 500px;
+  }
+  .container {
+      margin-top: 80px !important;
+      color: grey;
+      /* background-color: yellow; */
+  }
+  

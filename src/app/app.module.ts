@@ -26,6 +26,7 @@ import {HttpConfigInterceptor} from './interceptors/http-config.interceptor';
 import { FooterComponent } from './footer/footer.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { QuillModule } from 'ngx-quill';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +55,9 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    QuillModule.forRoot(), 
+    BrowserModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:HttpConfigInterceptor,multi:true}

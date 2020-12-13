@@ -1,14 +1,14 @@
 <app-header></app-header>
 <div class="container mt-5 my-5">
-    <div class="row div p-3">
-        <div class="col-md-10 text-center shadow-sm shadowT mx-auto">
-            <h1 class="mt-4">Create a new Post</h1>
+    <span class="text-center d-block"[style.color]="submitStatus=='Your post was succesful'?'green':'red'">{{submitStatus}}</span>
+    <div class="row p-3">
+        <div class="col-md-10 text-center div  mx-auto">
+            <h2 class="mt-4">Create a new Post</h2  >
             <form action="" class="border-0" [formGroup]="useForm">
                 <div class="row form-group">
                     <div class="col-md-3">
-                        <!-- <div *ngFor="let c of categories">{{c.name}}</div> -->
-                        <!-- <div></div> -->
-                        <select formControlName="category" class="form-control mt-2">
+                        <select formControlName="category" class="form-control mt-2" (click)="setDisabled()" required>
+                            <option [disabled]="disabled" selected>---&nbsp;&nbsp;Categories&nbsp;&nbsp;---</option>
                             <option value={{c.id}} class="" *ngFor="let c of categories">
                                 <span *ngIf="!loading">{{c.name}}</span>
                             </option>
@@ -16,22 +16,16 @@
                         </select>
                     </div>
                     <div class="col-md-9">
-                        <input type="text" id="" name="" formControlName="title" class="text-muted form-control mt-2"
+                        <input type="text" id="" name="" formControlName="title" required class="text-muted form-control mt-2"
                             placeholder="Post Topic">
                     </div>
                 </div>
-                <div class="row justify-content-center">
-                    <div class="col">
-                        <!-- <form> -->
-                            <textarea id="subject" formControlName="body" class="form-control"
-                                placeholder="Write something.."></textarea>
-                        <!-- </form> -->
+                    <div class="">
+                        <quill-editor class="editorStyle" [styles]="{height: '200px'}" id="subject" formControlName="body" required></quill-editor>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col mb-4">
-                        <input (click)="submitPost()" type="submit" value="Publish" />
-                    </div>
+
+                <div>
+                    <input class="btn" (click)="submitPost()" [disabled]="useForm.invalid" type="submit" value="Publish" />
                 </div>
             </form>
         </div>

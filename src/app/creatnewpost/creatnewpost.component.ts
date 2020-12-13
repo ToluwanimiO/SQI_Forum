@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PostserviceService } from '../postservice.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { PostserviceService } from '../postservice.service';
 export class CreatnewpostComponent implements OnInit {
 
 
-  constructor(public fb: FormBuilder, public postcate: PostserviceService) { }
+  constructor(public fb: FormBuilder, public postcate: PostserviceService, public router:Router) { }
   public useForm = this.fb.group({
     category:Number,
     title: [''],
@@ -23,6 +24,8 @@ export class CreatnewpostComponent implements OnInit {
   public posts = [];
   public categories;
   public loading = true;
+  public submitStatus;
+  public disabled = false;
   // public test = ["hey", "gedu"]
 
   // ordered() {
@@ -37,26 +40,36 @@ export class CreatnewpostComponent implements OnInit {
 
   //   subject.innerHTML = start;
   // }
-
+  setDisabled(){
+    this.disabled = true;
+  }
   submitPost() {
     // if (this.useForm) {
-      // console.log("hi")
+      console.log(this.useForm.controls['category'])
       let user = this.useForm.value;
       let newNumber = Number(this.useForm.controls['category'].value)
       let newPost = {category:newNumber,title:this.useForm.controls['title'].value,body:this.useForm.controls['body'].value}
       console.log(newPost)
       console.log(typeof(newNumber))
       this.postcate.postText(newPost).subscribe((res:any) => {
-        console.log(res);                               
+        console.log(res);
+        this.submitStatus = "Your post was succesful"
+        this.useForm.reset()
+        // this.router.navigate(["/home"])                       
       },(err:HttpErrorResponse)=>{
+        this.submitStatus = "Your post was not succesful, Ensure all fields have been filled"
         console.log(err);
+        // this.router.navigate(["/home"])
       })
       // console.log(user)
     // } else {
     //   console.log("THE INPUT YOU ENTER IS INCORRECT")
     // }
   }
+  
+ 
 
+  
 
   ngOnInit(): void {
     this.loading = true;

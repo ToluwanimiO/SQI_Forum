@@ -20,12 +20,16 @@ export class PostcontentComponent implements OnInit {
   public id;
   public userEmail;
   public text="";
+  public upvoteLength;
+  public commentLength;
   ngOnInit(): void {
     this.slug = this.actRoute.snapshot.params.slug
     this.id = this.actRoute.snapshot.params.id
     this.postService.retrieveListDetail(this.slug,this.id).subscribe(data=>{
       this.postDetail = data;
       this.loading = true;
+      this.upvoteLength = data.upvotes.length
+      this.commentLength = data.post_comments.length
       console.log(data)
     })
     this.userService.getUserDetails().subscribe(userDetails=>{
@@ -37,6 +41,10 @@ export class PostcontentComponent implements OnInit {
 
   handleCondition = () =>{
     this.condition = !this.condition
+    this.postService.upvote(this.postDetail.id).subscribe(count=>{
+      this.upvoteLength=count.upvote_count
+      console.log(count)
+    })
     
   }
   sendComment(){
@@ -46,6 +54,8 @@ export class PostcontentComponent implements OnInit {
     }
     this.commentService.sendComment(comment,this.slug,this.id,).subscribe(response=>{
       console.log(response)
+      this.text = ""
+      this.commentLength = this.commentLength+1
     },(err:HttpErrorResponse)=>{
       console.log(err)
     })
