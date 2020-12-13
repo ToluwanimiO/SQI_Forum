@@ -1,9 +1,20 @@
+/* <<<<<<< HEAD
     textarea {
     border-radius: 5px;
     border: 0.5px solid #E5E5E5;
     background-color: #F5F5F5;
-    /* padding: 15px; */
     height: 285px;
+======= */
+
+@import '../app.component.css';
+textarea {
+    border-radius: 5px;
+    box-shadow: none !important;
+    border: 1px solid #041A60;
+    background-color: #F1F2F5;
+    padding: 15px;
+    height: 315px;
+/* >>>>>>> b509b7a3f08ad4819f11df3345932c5f63a513a6 */
 }
 
 .editorStyle {
@@ -14,7 +25,7 @@ input[type=text], select {
     background-color: #F5F5F5;
     border: 0.3px solid #E5E5E5;
     border-radius: 5px;
-
+    box-shadow: none !important;
 }
 input:focus{
     outline: none;
@@ -22,12 +33,12 @@ input:focus{
  .shadowT {
     margin-top: 20px;
     border-radius: 5px;
-    background-color: #F3F3F3;
-    border: 1px solid grey ;
+    box-shadow: none !important;
+    background-color: #F6F6F6;
 }
 
 input[type=submit] {
-    background-color: #041A60;
+    background-color: #3246C9;
     border-radius: 5px;
     color: white;
     padding: 12px 20px;
@@ -64,13 +75,18 @@ input[type=submit]:hover {
 
   .div {
     background-color: white;
+    height: 170px;
+    width: 57px;
+    position: absolute;
+    top: 15px;
+    padding-right: 20px;
+    right: 20px;
     border-radius: 5px;
-    border: 0.5px solid #F3F3F3;
-    height: 500px;
+    box-shadow: none !important;
+/* <<<<<<< HEAD */
   }
   .container {
       margin-top: 80px !important;
       color: grey;
       /* background-color: yellow; */
   }
-  

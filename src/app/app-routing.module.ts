@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { SubCategoriesComponent } from './sub-categories/sub-categories.component';
 import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
 import { PostcontentComponent } from './postcontent/postcontent.component';
+import { ProfileComponent } from './profile/profile.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 
 
@@ -24,7 +25,7 @@ const routes: Routes = [
   {path: "create", component: CreatnewpostComponent},
   {path: "postcontent/:slug/:id", component: PostcontentComponent},
   {path:'home', component:HomeComponent},
-  
+  {path:"profile/:id", component:ProfileComponent},
   {path:'categories', children:[
       {path:'', component:CategoriesComponent},
       {path:'sub-categories', component:SubCategoriesComponent}

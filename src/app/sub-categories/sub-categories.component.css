@@ -1,3 +1,4 @@
+@import '../app.component.css';
 .card-style{
   height: 30px !important;
   border-radius: 20px 20px 7px 7px;
@@ -8,4 +9,11 @@
 .drop-height{
   height: 320px;
   overflow:auto
+}
+
+.form-control{
+  box-shadow: none !important;
+}
+.form-control:focus{
+  border-color: #021042 ;
 }

@@ -24,6 +24,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 import {HttpConfigInterceptor} from './interceptors/http-config.interceptor';
 import { FooterComponent } from './footer/footer.component';
+import { ProfileComponent } from './profile/profile.component';
+// import { FormsModule } from '@angular/forms';
+// import { HttpClientModule} from '@angular/common/http';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { QuillModule } from 'ngx-quill';
@@ -44,6 +47,7 @@ import { QuillModule } from 'ngx-quill';
     PostcontentComponent,
     PostfilterPipe,
     FooterComponent,
+    ProfileComponent,
     LandingpageComponent
   ],
   imports: [

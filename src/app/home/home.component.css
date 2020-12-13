@@ -1,6 +1,4 @@
-body{
-  background-color: red;
-}
+@import '../app.component.css';
 .hack{
   color: #FFBB00;
 }

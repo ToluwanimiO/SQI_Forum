@@ -2,27 +2,31 @@
 <app-header></app-header>
 <div class="container mt-2 p-1 p-md-3">
   <app-navbar></app-navbar>
-  <div class="row mt-n4">
-
-    <div class="col-10 d-lg-none mx-auto form-group">
+  <div class="row">
+    <div class="col-11 mt-n5 d-md-none mx-auto form-group">
       <input type="text" class="form-control" placeholder="Search...">
     </div>
     
-    <div class="p-4 bg-white text-center mx-auto rounded-circle topImg">
-        <img src="../../assets/sqicollege.png" width="70px" alt="SQI">
-    </div>
-    <div class="col-12 p-3 p-md-5 bg-white  shadow-sm">
-        <div class="row p-3 mt-5">
-
-              <div *ngFor="let carts of isArrayCategories"  class="col-md-3 col-6 text-center mx-auto rounded">
-                <div routerLink="/categories/sub-categories" class=" shadow card categoryCard mb-5">
-                  <img src="../../assets/image/dark.jpg" class="categoryImage rounded-top">
-                  <div class="card-body small p-md-4 p-3 cardText">
-                    <b>{{carts}}</b>
-                  </div>
+    <div class="col-12 p-3 m-2 m-md-0 pr-md-5 pl-md-5 pb-md-5 pt-md-0 bg-white border rounded">
+        <div class="row p-3">
+            <h1 class="col-12">Categories</h1>
+            <div *ngFor="let carts of isArrayCategories"  class="col-md-3 col-6 text-center mx-auto rounded">
+              <div routerLink="/categories/sub-categories" class=" shadow card categoryCard mb-5">
+                <img src="../../assets/image/dark.jpg" class="categoryImage rounded-top">
+                <div class="card-body small p-3 cardText">
+                  <b>{{carts}}</b>
                 </div>
               </div>
+            </div>
 
+            <div *ngFor="let carts of categoriesArray"  class="col-md-3 col-6 text-center mx-auto rounded">
+              <div [attr.routerLink]="'/categories/'+'i'" class=" shadow card categoryCard mb-5">
+                <img src="../../assets/image/dark.jpg" class="categoryImage rounded-top">
+                <div class="card-body small p-3 cardText">
+                  <b>{{carts}}</b>
+                </div>
+              </div>
+            </div>
         </div>
     </div>
   </div>

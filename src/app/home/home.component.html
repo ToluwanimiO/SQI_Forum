@@ -1,16 +1,14 @@
 <app-header></app-header>
   
-  <div class="container p-md-5 p-4">
+  <div class="container mt-2 p-1 p-md-3">
     <app-navbar></app-navbar>
     <span *ngIf="!loading">
-      <div class="text-center pt-5"><span class="fa fa-spinner fa-spin fa-5x"></span></div>
+      <div class="text-center pt-5"><span class="fa fa-spinner fa-spin fa-2x"></span></div>
     </span>
   <div class="row" *ngIf="loading">
     <div class="bg-white col-xl-9 col-lg-8 col-md-7 rounded border p-4">
-      
       <span >
       <div *ngFor="let item of isHomepageArray" class="clearfix p-2 m-2 border-bottom">
-        
         <h5><a (click)="viewPostDetails(item.slug+'/'+item.id)" class="text-dark titleLink font-weight-bold">{{item.title}}</a></h5>
         <span class="small text-muted mr-2">by {{item.author.username}}&nbsp; |</span>
         <span class="small text-muted ">{{item.category.name}}</span>
@@ -19,7 +17,7 @@
       </div>
       </span>
     </div>
-    <div class="col-xl-3 col-lg-4 col-md-5 d-none d-md-inline w-100 pr-0 row pl-4">
+    <div class="col-xl-3 col-lg-4 col-md-5 d-none d-md-inline w-100 pr-0 row pl-5">
       <div class="col-12 bg-white rounded border p-3" *ngIf="!LoginStatus">
         <h4 class="mb-4">Hello stranger!</h4>
         <p class="small mt-4 mb-4">
@@ -27,20 +25,20 @@
         </p>
         <button routerLink="/signIn" class="mx-auto btn-sm btn text-white sidebtns">Sign In</button>
         <button routerLink="/signUp" class="mx-auto btn-sm float-right text-white btn sidebtns">Sign Up</button>
-      </div>
+      </div> 
       <div class="col-12 bg-white rounded border p-3" *ngIf="LoginStatus">
         <h4 class="mb-4">Welcome back, {{userDet.username}}</h4>
         <p class="small mt-4 mb-4">
           Words words words words words words words words words words words words words
         </p>
-        <button class="mx-auto btn-sm btn text-white sidebtns">Edit Profile</button>
+        <button class="mx-auto btn-sm btn text-white sidebtns">View Profile</button>
         <button class="mx-auto btn-sm float-right text-white btn sidebtns" (click)="logOut()">Log out</button>
       </div>
       <div class="bg-white col-12 mt-2 rounded border p-3">
         <span *ngIf="loadingCategories">
         <div  *ngFor="let categories of categories">
           <span>{{categories.name}}</span>
-          <button class="mx-auto btn-sm float-right btn text-white sidebtns font-weight-bold">2,300</button> <hr/>
+          <button class="mx-auto btn-sm float-right btn text-white sidebtns font-weight-bold">{{categories.post_count}}</button> <hr/>
         </div>
         </span>
       </div>

@@ -1,6 +1,6 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PostserviceService } from '../postservice.service';
 import { CommentService } from '../services/comment.service';
 import { UsersService } from '../services/users.service';
@@ -11,8 +11,7 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./postcontent.component.css']
 })
 export class PostcontentComponent implements OnInit {
-
-  constructor(public actRoute: ActivatedRoute, public postService:PostserviceService,public commentService:CommentService,public userService:UsersService) { }
+  constructor(public actRoute: ActivatedRoute, public postService:PostserviceService,  public router:Router, public commentService:CommentService,public userService:UsersService) { }
   public postDetail;  
   public condition = true;
   public loading = false;
@@ -41,11 +40,18 @@ export class PostcontentComponent implements OnInit {
 
   handleCondition = () =>{
     this.condition = !this.condition
+// <<<<<<< HEAD
     this.postService.upvote(this.postDetail.id).subscribe(count=>{
       this.upvoteLength=count.upvote_count
       console.log(count)
     })
     
+// =======
+  }
+
+  showProfile = () =>{
+    this.router.navigate([`/profile/${this.postDetail.author.id}`])
+// >>>>>>> b509b7a3f08ad4819f11df3345932c5f63a513a6
   }
   sendComment(){
     let comment = {

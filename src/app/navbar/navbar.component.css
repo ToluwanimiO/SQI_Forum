@@ -5,12 +5,10 @@
   background-color: #021042;
   border-radius: 5px;
   color: white;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 80px;
+  margin-top: 70px !important;
 }
 .form-control{
-  min-width: 450px !important;
+  /* min-width: 450px !important; */
   height: 30px;
   box-shadow: none;
   border: none;
@@ -27,19 +25,7 @@
   position: sticky;
   top: 57px;
 }
-.btn1-mobile{
-  background: linear-gradient(to bottom, darkblue,#181c24);
-  box-shadow: none;
-}
-.btn2-mobile{
-  background: linear-gradient(to bottom, darkblue,#181c24);
-  box-shadow: none !important;
-  border-radius: 30px;
-  border: white;
-}
-/* .search-input{
-  width: 250%;
-} */
+
 .buttom-icon{
   color: #021042 !important;
 }
