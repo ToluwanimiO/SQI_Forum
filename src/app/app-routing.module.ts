@@ -28,7 +28,7 @@ const routes: Routes = [
   {path:"profile/:id", component:ProfileComponent},
   {path:'categories', children:[
       {path:'', component:CategoriesComponent},
-      {path:'sub-categories', component:SubCategoriesComponent}
+      {path:':name', component:SubCategoriesComponent}
   ]},
   
 ]

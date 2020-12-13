@@ -6,22 +6,14 @@
     <div class="bg-white col-xl-9 col-lg-8 pl-md-0 col-md-8 col-12 rounded border p-md-4 p-2">
       <div class="row">
         <h2 class="col-md-6">Posts Under Dynamic Category</h2>
-        <div class="col-md-5 ml-auto">
-          <select class="form-control">
-            <option>Dynamic Categories</option>
-            <option *ngFor="let category of categories">{{category}}</option>
-          </select>
-        </div>
       </div>
       <div *ngFor="let item of topicsArray" class="clearfix p-2 m-2 border-bottom">
-        <h5><a (click)="viewPostDetails(item.slug+'/'+item.id)" class="text-dark titleLink font-weight-bold">{{item.topic}}</a></h5>
+        <h5 class="heading"><a (click)="viewPostDetails(item.slug, item.id)" class="text-dark titleLink font-weight-bold">{{item.title}}</a></h5>
         <div class="small">
-          <!-- <span class="small text-muted mr-2">by Author{{item.author.username}}&nbsp; |</span> -->
-          <span class="text-muted ">{{item.categories}} &nbsp; |  &nbsp; </span>
-          <span class="text-muted mr-2">Date: 19-4-2019&nbsp; | </span>
-          <span class="text-muted mr-2">28 Replies &nbsp;</span>
-          <span class="text-primary fa fa-thumbs-up float-right mr-3">{{item.upvote}}</span>
-          <!-- <span class="fa text-danger fa-comment-o float-right mr-4">{{item.comment_count}}</span> -->
+          <span class="small text-muted mr-2" *ngIf="item.author">by {{item.author.username}}&nbsp; |</span>
+          <span class="text-muted mr-2">Date: {{item.created | slice:0:10}}&nbsp; | </span>
+          <span class="text-muted mr-2">{{item.comments_count}} Comments &nbsp;</span>
+          <span class="text-primary fa fa-thumbs-up float-right mr-3">{{item.upvotes_count}}</span>
         </div>
       </div>
     </div>

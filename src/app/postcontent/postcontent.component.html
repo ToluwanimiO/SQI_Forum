@@ -3,11 +3,11 @@
 <div class="container  mt-2 p-1 p-md-3">
     <app-navbar></app-navbar>
     <div class="row p-0">
-        <div class="col-md-9 p-0 pr-2 col-lg-10">
+        <div *ngIf="postDetail != undefined" class="col-md-9 p-0 pr-2 col-lg-10">
             <div class="col-12  mb-3 bg-white mr-auto border rounded p-0">
                 <div class="border-bottom">
                     <button class="fa fa-angle-double-left btn btn-light mr-2" routerLink="/home" ></button>
-                    <span class="small font-weight-bold">{{postDetail.title}} </span>
+                    <span class="small font-weight-bold" *ngIf="postDetail">{{postDetail.title}} </span>
                 </div>
                 <div class="p-3 postDiv">
                     {{postDetail.body}} <br/> <br/>
@@ -47,13 +47,13 @@
     
             <div id="maincomments" class="collapse">
                 <div *ngFor="let comments of postDetail.post_comments" class=" col-12 mb-2 pb-3 mx-auto border bg-white rounded p-0">
-                    <div class="p-3">{{comments.body}}</div>
+                    <div class="p-3" *ngIf="postDetail">{{comments.body}}</div>
                     <div class="row p-3">
                         <div class="col-md-6 d-flex">
                             <div class="d-flex border avatarDiv pr-2 rounded">
                                 <img class="smallAvatar" src="../../assets/profile.png" alt="">
                                 <div class="m-auto">
-                                    <h4 class="font-weight-bold mb-n2">{{comments.username}}</h4>
+                                    <h4 class="font-weight-bold mb-n2">{{comments.commenter.username}}</h4>
                                     <small class="small">{{comments.email}}</small>
                                 </div>
                             </div>
@@ -116,7 +116,8 @@
 
 
         <div class="col-3 pr-0 pl-2 col-lg-2 d-none d-md-inline">
-            <div class=" bg-white rounded p-3 border">
+            <div *ngFor="let same of sameCategory" class=" bg-white rounded p-3 border">
+                <h4>{{same}}</h4><hr/>
                 <h4>Post from the same Category</h4><hr/>
                 <h4>Post from the same Category</h4><hr/>
             </div>

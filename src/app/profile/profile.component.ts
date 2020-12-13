@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CategoryService } from '../services/category.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { CategoryService } from '../services/category.service';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor(public user:CategoryService, public actRoute:ActivatedRoute) { }
+  constructor(public user:CategoryService, public actRoute:ActivatedRoute, public router:Router) { }
   public userProfile;
   public userPost;
   ngOnInit(): void {
@@ -21,7 +21,10 @@ export class ProfileComponent implements OnInit {
       let post = data.filter((each, i)=>each.author.id == id);
       this.userPost = post
       console.log(post)
-    })
+    });
+  }
+  viewPostDetails = (slug, id) =>{
+    this.router.navigate([`/postcontent/${slug}/${id}`])
   }
 
 }

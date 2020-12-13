@@ -2,6 +2,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PostserviceService } from '../postservice.service';
+import { CategoryService } from '../services/category.service';
 import { CommentService } from '../services/comment.service';
 import { UsersService } from '../services/users.service';
 
@@ -11,7 +12,7 @@ import { UsersService } from '../services/users.service';
   styleUrls: ['./postcontent.component.css']
 })
 export class PostcontentComponent implements OnInit {
-  constructor(public actRoute: ActivatedRoute, public postService:PostserviceService,  public router:Router, public commentService:CommentService,public userService:UsersService) { }
+  constructor(public actRoute: ActivatedRoute, public postService:PostserviceService, public categories:CategoryService, public router:Router, public commentService:CommentService,public userService:UsersService) { }
   public postDetail;  
   public condition = true;
   public loading = false;
@@ -19,6 +20,7 @@ export class PostcontentComponent implements OnInit {
   public id;
   public userEmail;
   public text="";
+  public sameCategory;
   ngOnInit(): void {
     this.slug = this.actRoute.snapshot.params.slug
     this.id = this.actRoute.snapshot.params.id
@@ -29,7 +31,10 @@ export class PostcontentComponent implements OnInit {
     })
     this.userService.getUserDetails().subscribe(userDetails=>{
       this.userEmail = userDetails.email;
-        console.log(userDetails)
+    })
+    this.categories.getCategories().subscribe(category=>{
+      this.sameCategory = category.filter(each=>each.name == this.postDetail.category.title)
+
     })
 
   }
