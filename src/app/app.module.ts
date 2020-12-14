@@ -30,6 +30,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { QuillModule } from 'ngx-quill';
+import { FilterTextPipe } from './pipes/filter-text.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +49,8 @@ import { QuillModule } from 'ngx-quill';
     PostfilterPipe,
     FooterComponent,
     ProfileComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    FilterTextPipe
   ],
   imports: [
     BrowserModule,

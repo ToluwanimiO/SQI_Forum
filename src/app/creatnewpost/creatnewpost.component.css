@@ -34,7 +34,7 @@ input:focus{
     margin-top: 20px;
     border-radius: 5px;
     box-shadow: none !important;
-    background-color: #F6F6F6;
+    /* background-color: #F6F6F6; */
 }
 
 input[type=submit] {

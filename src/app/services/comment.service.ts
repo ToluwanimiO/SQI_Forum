@@ -15,4 +15,7 @@ export class CommentService {
     console.log(reply)
     return this.http.post<any>(`${this.baseUrl}/comment/${id}/reply/`,reply);
   }
+  likeComment(idComment){
+    return this.http.post<any>(`${this.baseUrl}/comment/${idComment}/upvote/`,"")
+  }
 }

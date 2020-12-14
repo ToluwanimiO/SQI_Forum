@@ -19,6 +19,7 @@ export class HomeComponent implements OnInit {
     public loadingCategories = false;
     public LoginStatus = false;
     public userDet;
+    public searchText;
     constructor(public snackbar:MatSnackBar,public signOut:SignInService, public categoryService: CategoryService, public postService:PostserviceService,public router:Router,public userService:UsersService) { }
 
   ngOnInit(): void {
@@ -63,5 +64,7 @@ export class HomeComponent implements OnInit {
     console.log(id)
     this.router.navigate([`/postcontent/${id}`])
   }
-
+  viewSearchText(e){
+    this.searchText = e;
+  }
 }
