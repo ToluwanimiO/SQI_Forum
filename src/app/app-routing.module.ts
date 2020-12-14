@@ -24,7 +24,7 @@ const routes: Routes = [
   {path:"signIn",component:SignInComponent},
   {path:"signUp",component:SignUpComponent},
   {path:"signUp2",component:SignUpPhase2Component},
-  {path:"editProfile",component:EditProfileComponent, canActivate:[UserguardGuard]},
+  // {path:"editProfile",component:EditProfileComponent, canActivate:[UserguardGuard]},
   {path: "create", component: CreatnewpostComponent, canActivate:[UserguardGuard]},
   {path: "postcontent/:slug/:id", component: PostcontentComponent, canActivate:[PostguardGuard, UserguardGuard]},
   {path:'home', component:HomeComponent},

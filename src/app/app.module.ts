@@ -31,6 +31,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { QuillModule } from 'ngx-quill';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { FilterTextPipe } from './pipes/filter-text.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -50,7 +51,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
     FooterComponent,
     ProfileComponent,
     LandingpageComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    FilterTextPipe
   ],
   imports: [
     BrowserModule,

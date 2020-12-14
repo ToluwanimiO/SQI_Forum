@@ -10,7 +10,7 @@
         <div><a href="" routerLink="/categories" class="navbar-brand text-white text-size mr-5">Categories</a></div>
         <div class="w-50">
           <form class="form-inline justify-content-center">
-            <input class="form-control col-md-12 mx-auto ml-sm-5"  type="text" placeholder="Search">
+            <input class="form-control col-md-12 mx-auto ml-sm-5"  type="text" placeholder="Search" (keyup)="emitText($event)">
           </form>
         </div>
         <ul class="navbar-nav ml-auto">

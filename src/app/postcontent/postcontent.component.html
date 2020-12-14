@@ -14,13 +14,6 @@
                 </div>
                 <div class="p-3 postDiv">
                     <quill-view-html [content]="postDetail.body" theme="snow"></quill-view-html>
-                    <!-- {{postDetail.body}} <br/> <br/>
-    
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/><br/>
-    
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/><br/>
-    
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/> -->
                 </div>
                 <div class="row p-3">
                     <div class="col-md-6 d-flex">
@@ -59,7 +52,7 @@
                     <div class="p-3" *ngIf="postDetail">{{comments.body}}</div>
                     <div class="row p-3">
                         <div class="col-md-6 d-flex">
-                            <div class="d-flex border avatarDiv pr-2 rounded">
+                            <div class="d-flex border avatarDiv pr-2 rounded" (click)="showCommenterProfile(comments.commenter.id)">
                                 <img class="smallAvatar" src="../../assets/profile.png" alt="">
                                 <div class="m-auto">
                                     <h4 class="font-weight-bold mb-n2">{{comments.commenter.username}}</h4>
@@ -67,17 +60,17 @@
                                 </div>
                             </div>
                             <div class="ml-2 small mt-1">
-                                <span class="badge badge-danger p-1 mx-auto">18:46</span>
-                                <p class="small">29-Jan-20</p>
+                                <span class="badge badge-danger p-1 mx-auto">{{comments.created |slice:11:16}}</span>
+                                <p class="small">{{comments.created |slice:0:10}}</p>
                             </div>
                         </div>
                         <div class="col-md-6 mx-auto">
                             <div class="reactionDiv p-2 rounded text-white my-auto ml-auto">
-                                <i class="fa fa-thumbs-o-up mr-4 ml-3" [class.fa-thumbs-up]="!condition" [class.fa-thumbs-o-up]="condition" (click)="handleCondition()">
-                                    <sup class="badge rounded-pill badge-primary">11</sup>
+                                <i class="fa fa-thumbs-o-up mr-4 ml-3" [class.fa-thumbs-up]="!condition2" [class.fa-thumbs-o-up]="condition2" (click)="likeComment(comments.id)">
+                                    <sup class="badge rounded-pill badge-primary">{{comments.upvotes.length}}</sup>
                                 </i>
                                 <i class="fa fa fa-comment-o mr-4" data-toggle="collapse" [attr.data-target]="'#comment'+comments.id">
-                                    <sup class="badge rounded-pill badge-danger">1</sup>
+                                    <sup class="badge rounded-pill badge-danger">{{comments.replies.length}}</sup>
                                 </i>
                                 <i class="fa fa fa-mail-forward mr-3"></i>
                             </div>
@@ -86,36 +79,38 @@
         
                         <!-- sub-comment -->
                         <div [id]="'comment'+comments.id" class="collapse col-md-11 ml-1 ml-md-auto mb-3 border-left p-0 mt-3">
-                            <div class="p-3">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque architecto ad repellendus. Dolorem, harum. Nam eveniet atque voluptatum iste velit hic veritatis non labore esse. Commodi expedita adipisci eius impedit!
-                            </div>
-                            <div class="row p-3">
-                                <div class="col-md-6 d-flex">
-                                    <div class="d-flex border avatarDiv pr-2 rounded">
-                                        <img class="smallAvatar" src="../../assets/profile.png" alt="">
-                                        <div class="m-auto">
-                                            <h4 class="font-weight-bold mb-n2">Felix Joy</h4>
-                                            <small class="small">felixadegboyega2019@gmail.com</small>
+                            <div *ngFor="let replies of comments.replies">
+                                <div class="p-3">
+                                    {{replies.body}}
+                                </div>
+                                <div class="row p-3">
+                                    <div class="col-md-6 d-flex">
+                                        <div class="d-flex border avatarDiv pr-2 rounded">
+                                            <img class="smallAvatar" src="../../assets/profile.png" alt="">
+                                            <div class="m-auto">
+                                                <!-- <h4 class="font-weight-bold mb-n2">Felix Joy</h4> -->
+                                                <small class="small">{{replies.email}}</small>
+                                            </div>
+                                        </div>
+                                        <div class="ml-2 small mt-1">
+                                            <span class="badge badge-danger p-1 mx-auto">{{replies.created |slice:11:16}}</span>
+                                            <p class="small">{{replies.created |slice:0:10}}</p>
                                         </div>
                                     </div>
-                                    <div class="ml-2 small mt-1">
-                                        <span class="badge badge-danger p-1 mx-auto">18:46</span>
-                                        <p class="small">29-Jan-20</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 mx-auto">
-                                    <div class="reactionDiv p-2 rounded text-white my-auto ml-auto">
-                                        <i class="fa fa-thumbs-o-up mr-4 ml-3" [class.fa-thumbs-up]="!condition" [class.fa-thumbs-o-up]="condition" (click)="handleCondition()">
-                                            <sup class="badge rounded-pill badge-primary">11</sup>
-                                        </i>
-                                        <i class="fa fa fa-mail-forward mr-3"></i>
+                                    <div class="col-md-6 mx-auto">
+                                        <div class="reactionDiv p-2 rounded text-white my-auto ml-auto">
+                                            <i class="fa fa-thumbs-o-up mr-4 ml-3" [class.fa-thumbs-up]="!condition" [class.fa-thumbs-o-up]="condition" (click)="handleCondition()">
+                                                <sup class="badge rounded-pill badge-primary">11</sup>
+                                            </i>
+                                            <i class="fa fa fa-mail-forward mr-3"></i>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
         
                         <div class="d-flex col-12 ml-auto mt-1 p-0 pr-3 pl-3">
-                            <input type="text" placeholder="Type Reply here" class="form-control" [(ngModel)]="reply_text">
+                            <input type="text" placeholder="Type Reply here" class="form-control" (keyup)="replyInput($event)" [id]="'sc'+comments.id" name="inputReply" #inputReply>
                             <button class="fa fa-send-o ml-2 sendButton btn text-white" (click)="sendReply(comments.id)"></button>
                         </div>
                     </div>
@@ -127,7 +122,8 @@
         <div class="col-3 pr-0 pl-2 col-lg-2 d-none d-md-block">
             <div *ngIf="loading"  class=" bg-white rounded p-3 border">
                 <div>
-                    <h4 *ngFor="let same of sameCategory" (click)="viewPost(same.slug,same.id)" class="sameCategoryLink">{{same.title}}<hr/></h4>
+                    <b>Other posts in {{CategoryName}} category</b><hr/>
+                    <div *ngFor="let same of sameCategory" (click)="viewPost(same.slug,same.id)" class="pt-2 pb-2 sameCategoryLink w-100 border-bottom">{{same.title}}</div>
                 </div> 
             </div>
         </div>

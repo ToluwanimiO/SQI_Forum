@@ -1,14 +1,14 @@
 <app-header></app-header>
   
   <div class="container mt-2 p-1 p-md-3">
-    <app-navbar></app-navbar>
+    <app-navbar (searchText)="viewSearchText($event)"></app-navbar>
     <span *ngIf="!loading">
       <div class="text-center pt-5"><span class="fa fa-spinner fa-spin fa-2x"></span></div>
     </span>
   <div class="row mt-n5 mt-md-0" *ngIf="loading">
     <div class="bg-white col-xl-9 col-lg-8 col-md-7 rounded border p-4">
       <span >
-        <div *ngFor="let item of isHomepageArray" class="clearfix p-2 m-2 border-bottom">
+        <div *ngFor="let item of isHomepageArray | filterText:searchText" class="clearfix p-2 m-2 border-bottom">
           <h5><a (click)="viewPostDetails(item.slug+'/'+item.id)" class="text-dark titleLink font-weight-bold">{{item.title}}</a></h5>
           <span class="small text-muted mr-2">by {{item.author.username}}&nbsp; |</span>
           <span class="small text-muted ">{{item.category.name}}</span>
