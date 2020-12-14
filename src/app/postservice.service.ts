@@ -24,4 +24,7 @@ export class PostserviceService {
   public retrieveListDetail(slug,id){
     return this.http.get<any>(`${this.baseUrl}/post/${slug}/${id}`)
   }
+  upvote(post_id){
+    return this.http.post<any>(`${this.baseUrl}/post/${post_id}/upvote/`,"")
+  }
 }

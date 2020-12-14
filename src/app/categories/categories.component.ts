@@ -9,11 +9,13 @@ import { CategoryService } from '../services/category.service';
 })
 export class CategoriesComponent implements OnInit {
 public categoriesArray;
+public loading = false;
   constructor(public categories:CategoryService, public router:Router) { }
 
   ngOnInit(): void {
     this.categories.getCategories().subscribe(data =>{
       this.categoriesArray = data;
+      this.loading = true;
       console.log(data);
     })
   }

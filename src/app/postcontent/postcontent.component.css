@@ -46,3 +46,9 @@
 .sub-reactionDiv{
     width:fit-content;
 }
+
+.sameCategoryLink{
+    cursor: pointer;
+    outline: none;
+    border: none;
+}

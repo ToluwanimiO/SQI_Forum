@@ -29,6 +29,8 @@ import { ProfileComponent } from './profile/profile.component';
 // import { HttpClientModule} from '@angular/common/http';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { QuillModule } from 'ngx-quill';
+import { NotfoundComponent } from './notfound/notfound.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +49,8 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     PostfilterPipe,
     FooterComponent,
     ProfileComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
@@ -58,7 +61,9 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     ReactiveFormsModule,
     HttpClientModule,
     MatTooltipModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    QuillModule.forRoot(), 
+    BrowserModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:HttpConfigInterceptor,multi:true}

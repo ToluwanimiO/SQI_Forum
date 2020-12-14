@@ -9,27 +9,21 @@ textarea {
     height: 315px;
 }
 
-textarea:focus{
-    outline: none;
-}
-
-.icons:focus{
-    outline: none;
-    background-color: #F6F6F6;
+.editorStyle {
+    background-color: #F5F5F5;
+    height: "200px";
 }
 
 input[type=text], select {
-    background-color: #F1F2F5;
-    border: 1px solid #041A60;
+    background-color: #F5F5F5;
+    border: 0.3px solid #E5E5E5;
     border-radius: 5px;
     box-shadow: none !important;
-
 }
 input:focus{
     outline: none;
 }
  .shadowT {
-    margin-top: 20px;
     border-radius: 5px;
     box-shadow: none !important;
     background-color: #F6F6F6;
@@ -42,16 +36,19 @@ input[type=submit] {
     padding: 12px 20px;
     border: #041A60;
     cursor: pointer;
-    box-shadow: #041A60;
-    margin-top: 5px;
-    box-shadow: 0 5px #666;
-  transform: translateY(4px);
-
+    /* box-shadow: #041A60; */
+    margin-top: 10px;
+    font-size: bold;
 }
 
 input[type=submit]:hover {
     background-color: #041A60;
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 5px #666; */
+    /* transform: translateY(4px); */
+}
+.btn:disabled{
+    cursor: none;
 }
 
 .input[type=submit]:active {
@@ -63,9 +60,8 @@ input[type=submit]:hover {
 .form-group {
     position: relative;  
   }
-  
 
-.icons {
+  .div {
     background-color: white;
     height: 170px;
     width: 57px;
@@ -75,4 +71,9 @@ input[type=submit]:hover {
     right: 20px;
     border-radius: 5px;
     box-shadow: none !important;
-}
+/* <<<<<<< HEAD */
+  }
+  .container {
+      color: grey;
+      /* background-color: yellow; */
+  }

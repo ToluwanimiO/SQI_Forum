@@ -13,6 +13,9 @@ import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
 import { PostcontentComponent } from './postcontent/postcontent.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { PostguardGuard } from './guard/postguard.guard';
+import { UserguardGuard } from './guard/userguard.guard';
 
 
 const routes: Routes = [
@@ -21,15 +24,16 @@ const routes: Routes = [
   {path:"signIn",component:SignInComponent},
   {path:"signUp",component:SignUpComponent},
   {path:"signUp2",component:SignUpPhase2Component},
-  {path:"editProfile",component:EditProfileComponent},
-  {path: "create", component: CreatnewpostComponent},
-  {path: "postcontent/:slug/:id", component: PostcontentComponent},
+  {path:"editProfile",component:EditProfileComponent, canActivate:[UserguardGuard]},
+  {path: "create", component: CreatnewpostComponent, canActivate:[UserguardGuard]},
+  {path: "postcontent/:slug/:id", component: PostcontentComponent, canActivate:[PostguardGuard, UserguardGuard]},
   {path:'home', component:HomeComponent},
   {path:"profile/:id", component:ProfileComponent},
   {path:'categories', children:[
       {path:'', component:CategoriesComponent},
       {path:':name', component:SubCategoriesComponent}
   ]},
+  {path:"**", component:NotfoundComponent}
   
 ]
 // =======

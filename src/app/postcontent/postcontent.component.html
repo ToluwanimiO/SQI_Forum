@@ -2,16 +2,25 @@
 
 <div class="container  mt-2 p-1 p-md-3">
     <app-navbar></app-navbar>
-    <div class="row p-0">
-        <div *ngIf="postDetail != undefined" class="col-md-9 p-0 pr-2 col-lg-10">
-            <div class="col-12  mb-3 bg-white mr-auto border rounded p-0">
+    <div class="row mt-n5 pt-n2 mt-md-0 p-md-0">
+        <span class="col-12 text-center" *ngIf="!loading">
+            <div class="text-center pt-5"><span class="fa fa-spinner fa-spin fa-2x"></span></div>
+        </span>
+        <div *ngIf="postDetail != undefined" class="col-md-9 p-3 pt-md-0 pl-md-0 pr-md-2 col-lg-10">
+            <div class="col-12 mb-3 bg-white mr-auto border p-0 rounded">
                 <div class="border-bottom">
                     <button class="fa fa-angle-double-left btn btn-light mr-2" routerLink="/home" ></button>
                     <span class="small font-weight-bold" *ngIf="postDetail">{{postDetail.title}} </span>
                 </div>
                 <div class="p-3 postDiv">
-                    {{postDetail.body}} <br/> <br/>
+                    <quill-view-html [content]="postDetail.body" theme="snow"></quill-view-html>
+                    <!-- {{postDetail.body}} <br/> <br/>
+    
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/><br/>
+    
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/><br/>
+    
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste quia amet a tempora, hic repudiandae quis. Quia alias quaerat, ratione veritatis nostrum excepturi quasi laboriosam consectetur fugiat voluptas velit pariatur. <br/> -->
                 </div>
                 <div class="row p-3">
                     <div class="col-md-6 d-flex">
@@ -30,10 +39,10 @@
                     <div class="col-md-6 mx-auto">
                         <div class="reactionDiv p-2 rounded my-auto ml-auto">
                             <i class="fa mr-4 ml-3" [class.fa-thumbs-up]="!condition" [class.fa-thumbs-o-up]="condition" (click)="handleCondition()">
-                                <sup class="badge rounded-pill badge-primary">11</sup>
+                                <sup class="badge rounded-pill badge-primary">{{upvoteLength}}</sup>
                             </i>
                             <i class="fa fa-comment-o mr-4" data-toggle="collapse" data-target="#maincomments">
-                                <sup class="badge rounded-pill badge-danger">1</sup>
+                                <sup class="badge rounded-pill badge-danger">{{commentLength}}</sup>
                             </i>
                             <i class="fa fa-mail-forward mr-3"></i>
                         </div>
@@ -46,7 +55,7 @@
             </div>
     
             <div id="maincomments" class="collapse">
-                <div *ngFor="let comments of postDetail.post_comments" class=" col-12 mb-2 pb-3 mx-auto border bg-white rounded p-0">
+                <div *ngFor="let comments of postDetail.non_reply_comments" class=" col-12 mb-2 pb-3 mx-auto border bg-white rounded p-0">
                     <div class="p-3" *ngIf="postDetail">{{comments.body}}</div>
                     <div class="row p-3">
                         <div class="col-md-6 d-flex">
@@ -106,8 +115,8 @@
                         </div>
         
                         <div class="d-flex col-12 ml-auto mt-1 p-0 pr-3 pl-3">
-                            <input type="text" placeholder="Type Reply here" class="form-control">
-                            <button class="fa fa-send-o ml-2 sendButton btn text-white"></button>
+                            <input type="text" placeholder="Type Reply here" class="form-control" [(ngModel)]="reply_text">
+                            <button class="fa fa-send-o ml-2 sendButton btn text-white" (click)="sendReply(comments.id)"></button>
                         </div>
                     </div>
                 </div>
@@ -115,11 +124,11 @@
         </div>
 
 
-        <div class="col-3 pr-0 pl-2 col-lg-2 d-none d-md-inline">
-            <div *ngFor="let same of sameCategory" class=" bg-white rounded p-3 border">
-                <h4>{{same}}</h4><hr/>
-                <h4>Post from the same Category</h4><hr/>
-                <h4>Post from the same Category</h4><hr/>
+        <div class="col-3 pr-0 pl-2 col-lg-2 d-none d-md-block">
+            <div *ngIf="loading"  class=" bg-white rounded p-3 border">
+                <div>
+                    <h4 *ngFor="let same of sameCategory" (click)="viewPost(same.slug,same.id)" class="sameCategoryLink">{{same.title}}<hr/></h4>
+                </div> 
             </div>
         </div>
     </div>

@@ -3,13 +3,16 @@
   <app-navbar></app-navbar>
 
   <div class="row">
-    <div class="bg-white col-xl-9 col-lg-8 pl-md-0 col-md-8 col-12 rounded border p-md-4 p-2">
-      <div class="row">
-        <h2 class="col-md-6">Posts Under Dynamic Category</h2>
+    <div *ngIf="!loading" class="col-12 text-center w-100">
+      <span class="fa mt-5 mx-auto fa-spinner fa-spin fa-2x"></span>
+    </div>
+    <div *ngIf="loading" class="bg-white col-xl-9 col-lg-8 pl-md-0 col-md-8 col-12 rounded border p-md-4 p-2">
+      <div class="row" *ngIf="loading">
+        <h2 class="col-12">Posts Under {{category}} Category</h2>
       </div>
       <div *ngFor="let item of topicsArray" class="clearfix p-2 m-2 border-bottom">
         <h5 class="heading"><a (click)="viewPostDetails(item.slug, item.id)" class="text-dark titleLink font-weight-bold">{{item.title}}</a></h5>
-        <div class="small">
+        <div  class="small">
           <span class="small text-muted mr-2" *ngIf="item.author">by {{item.author.username}}&nbsp; |</span>
           <span class="text-muted mr-2">Date: {{item.created | slice:0:10}}&nbsp; | </span>
           <span class="text-muted mr-2">{{item.comments_count}} Comments &nbsp;</span>

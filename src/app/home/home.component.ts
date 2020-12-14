@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { PostserviceService } from '../postservice.service';
 import { CategoryService } from '../services/category.service';
 import { UsersService } from '../services/users.service';
+import { SignInService } from '../sign-in.service';
 
 @Component({
   selector: 'app-home',
@@ -18,7 +19,7 @@ export class HomeComponent implements OnInit {
     public loadingCategories = false;
     public LoginStatus = false;
     public userDet;
-    constructor(public snackbar:MatSnackBar, public categoryService: CategoryService, public postService:PostserviceService,public router:Router,public userService:UsersService) { }
+    constructor(public snackbar:MatSnackBar,public signOut:SignInService, public categoryService: CategoryService, public postService:PostserviceService,public router:Router,public userService:UsersService) { }
 
   ngOnInit(): void {
     this.categoryService.getCategories().subscribe(data => {
@@ -31,7 +32,7 @@ export class HomeComponent implements OnInit {
       console.log(data);
     },(err:HttpErrorResponse)=>{
         if(err){
-          this.snackbar.open('Disconnect','Dismiss')
+          this.snackbar.open('Disconnected','Dismiss')
         }
     })
     this.postService.retrieveLists().subscribe(data=>{
@@ -51,9 +52,19 @@ export class HomeComponent implements OnInit {
     });
 
   }
+  logOut(){
+    this.signOut.signOut().subscribe(out=>{
+      localStorage.removeItem("Token");
+      this.router.navigate(['/signIn'])
+      console.log(out)
+    })
+  }
   viewPostDetails(id){
     console.log(id)
     this.router.navigate([`/postcontent/${id}`])
+  }
+  viewProfile = () =>{
+    this.router.navigate([`/profile/${this.userDet.pk}`]);
   }
 
 }

@@ -7,7 +7,11 @@ import { Injectable } from '@angular/core';
 export class SignInService {
 
   constructor(public http:HttpClient) { }
+  public baseUrl = "http://sqiforum.herokuapp.com/api/v1"
   verifyLogin(loginDetails){
-    return this.http.post<any>("http://sqiforum.herokuapp.com/api/v1/auth/login/",loginDetails);
+    return this.http.post<any>(`${this.baseUrl}/auth/login/`,loginDetails);
+  }
+  signOut(){
+    return this.http.post<any>(`${this.baseUrl}/auth/logout/`,"");
   }
 }
