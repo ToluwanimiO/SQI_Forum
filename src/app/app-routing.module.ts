@@ -14,8 +14,6 @@ import { PostcontentComponent } from './postcontent/postcontent.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { NotfoundComponent } from './notfound/notfound.component';
-import { PostguardGuard } from './guard/postguard.guard';
-import { UserguardGuard } from './guard/userguard.guard';
 
 
 const routes: Routes = [
@@ -25,8 +23,8 @@ const routes: Routes = [
   {path:"signUp",component:SignUpComponent},
   {path:"signUp2",component:SignUpPhase2Component},
   // {path:"editProfile",component:EditProfileComponent, canActivate:[UserguardGuard]},
-  {path: "create", component: CreatnewpostComponent, canActivate:[UserguardGuard]},
-  {path: "postcontent/:slug/:id", component: PostcontentComponent, canActivate:[PostguardGuard, UserguardGuard]},
+  {path: "create", component: CreatnewpostComponent},
+  {path: "postcontent/:slug/:id", component: PostcontentComponent},
   {path:'home', component:HomeComponent},
   {path:"profile/:id", component:ProfileComponent},
   {path:'categories', children:[
