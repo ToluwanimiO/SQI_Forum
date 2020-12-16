@@ -85,7 +85,7 @@ export class PostcontentComponent implements OnInit {
     this.commentService.sendReply(comment,comments_id).subscribe(response=>{
       console.log(response)
       let inp = document.getElementById('sc'+comments_id)
-      inp.value = '';
+      // inp.value = '';
       // console.log(this.replyTextInput.nativeElement.value)
       // this.replyTextInput.nativeElement.value = "";
       // this.reply_text = ""

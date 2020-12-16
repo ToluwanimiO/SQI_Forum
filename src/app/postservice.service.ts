@@ -1,12 +1,14 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { AuthGuardService } from './auth-guard.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostserviceService {
 
-  constructor(public http: HttpClient) { }
+  constructor(public http: HttpClient, public AuthGuardService: AuthGuardService) { }
   public baseUrl = "https://sqiforum.herokuapp.com/api/v1";
   // /api/v1/post/create/
   // http://sqiforum.herokuapp.com/api/v1/post/create/
@@ -26,5 +28,19 @@ export class PostserviceService {
   }
   upvote(post_id){
     return this.http.post<any>(`${this.baseUrl}/post/${post_id}/upvote/`,"")
+  }
+
+  public getPosts() {
+      const token = this.AuthGuardService.getToken();
+      const headers = new HttpHeaders({
+        Authorization: `Bearer ${token}`});
+        return this.http.get<any>(`${this.baseUrl}/post/{post}/{id}/comment/`, {headers})
+  }
+
+  public getPost(id: String) {
+    const token = this.AuthGuardService.getToken();
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${token}`});
+      return this.http.get<any>(`${this.baseUrl}/post/{post}/{id}/comment/${id}`, {headers});
   }
 }

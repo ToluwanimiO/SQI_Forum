@@ -31,6 +31,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { QuillModule } from 'ngx-quill';
 import { FilterTextPipe } from './pipes/filter-text.pipe';
+// import { AuthGuard } from './auth.guard';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import { FilterTextPipe } from './pipes/filter-text.pipe';
     MatTooltipModule,
     MatSnackBarModule,
     QuillModule.forRoot(), 
-    BrowserModule
+    BrowserModule, 
+    // AuthGuard
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS,useClass:HttpConfigInterceptor,multi:true}

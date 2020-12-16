@@ -13,6 +13,7 @@ import { CreatnewpostComponent } from './creatnewpost/creatnewpost.component';
 import { PostcontentComponent } from './postcontent/postcontent.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+// import { AuthGuard } from './auth.guard';
 
 
 const routes: Routes = [
@@ -23,6 +24,7 @@ const routes: Routes = [
   {path:"signUp2",component:SignUpPhase2Component},
   {path:"editProfile",component:EditProfileComponent},
   {path: "create", component: CreatnewpostComponent},
+  // {path: "create", component: CreatnewpostComponent, canActivate: [AuthGuard]},
   {path: "postcontent/:slug/:id", component: PostcontentComponent},
   {path:'home', component:HomeComponent},
   {path:"profile/:id", component:ProfileComponent},

@@ -1,7 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { FormBuilder, FormControlName, FormGroup } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PostserviceService } from '../postservice.service';
 
 @Component({
@@ -10,9 +10,10 @@ import { PostserviceService } from '../postservice.service';
   styleUrls: ['./creatnewpost.component.css']
 })
 export class CreatnewpostComponent implements OnInit {
+  // useForm: FormGroup;
+  // bodyContent: string;
 
-
-  constructor(public fb: FormBuilder, public postcate: PostserviceService, public router:Router) { }
+  constructor(public fb: FormBuilder, public PostserviceService: PostserviceService, public postcate: PostserviceService ,public router:Router, public route: ActivatedRoute, public post: PostserviceService) { }
   public useForm = this.fb.group({
     category:Number,
     title: [''],
@@ -20,6 +21,7 @@ export class CreatnewpostComponent implements OnInit {
     // createpost: [""],
   });
 
+  public postCate = "";
   public filterText;
   public posts = [];
   public categories;
@@ -78,5 +80,20 @@ export class CreatnewpostComponent implements OnInit {
       this.categories = a.body;
       console.log(this.categories)
     })
+    this.route.params.subscribe(param => {
+      console.log(param.id)
+      this.getPost(param.id);
+    })
+  }
+
+ public getPost(id: string): void {
+      this.PostserviceService.getPost(id).subscribe(data => 
+        this.post = data.result);
+  }
+
+  maxlength(event) {
+    if (event.body.getLength() > 10) {
+      event.body.deleteText(10, event.body.getLength())
+    }
   }
 }

@@ -29,12 +29,13 @@
                             placeholder="Post Topic">
                     </div>
                 </div>
-                    <div class="">
-                        <quill-editor class="editorStyle" [styles]="{height: '200px'}" id="subject" formControlName="body" required></quill-editor>
+                    <div class="form-group">
+                        <quill-editor class="editorStyle" [styles]="{height: '300px'}" id="subject" formControlName="body" (onContentChange)="maxlength($event)" required></quill-editor>
+                        <span *ngIf="useForm.get('body').value !== null">{{useForm.get('body').value.length}}</span>
                     </div>
 
                 <div>
-                    <input class="btn" (click)="submitPost()" [disabled]="useForm.invalid" type="submit" value="Publish" />
+                    <input class="btn mb-4" (click)="submitPost()" [disabled]="useForm.invalid" type="submit" value="Publish" />
                 </div>
             </form>
         </div>
