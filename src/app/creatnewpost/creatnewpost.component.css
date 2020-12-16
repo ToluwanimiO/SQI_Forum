@@ -1,10 +1,3 @@
-/* <<<<<<< HEAD
-    textarea {
-    border-radius: 5px;
-    border: 0.5px solid #E5E5E5;
-    background-color: #F5F5F5;
-    height: 285px;
-======= */
 
 @import '../app.component.css';
 textarea {
@@ -14,11 +7,11 @@ textarea {
     background-color: #F1F2F5;
     padding: 15px;
     height: 315px;
-/* >>>>>>> b509b7a3f08ad4819f11df3345932c5f63a513a6 */
 }
 
 .editorStyle {
     background-color: #F5F5F5;
+    height: "200px";
 }
 
 input[type=text], select {
@@ -31,7 +24,6 @@ input:focus{
     outline: none;
 }
  .shadowT {
-    margin-top: 20px;
     border-radius: 5px;
     box-shadow: none !important;
     /* background-color: #F6F6F6; */
@@ -47,10 +39,6 @@ input[type=submit] {
     /* box-shadow: #041A60; */
     margin-top: 10px;
     font-size: bold;
-}
-
-.editorStyle {
-    height: "200px";
 }
 
 input[type=submit]:hover {
@@ -86,7 +74,6 @@ input[type=submit]:hover {
 /* <<<<<<< HEAD */
   }
   .container {
-      margin-top: 80px !important;
       color: grey;
       /* background-color: yellow; */
   }

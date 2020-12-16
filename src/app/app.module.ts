@@ -30,6 +30,7 @@ import { ProfileComponent } from './profile/profile.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { QuillModule } from 'ngx-quill';
+import { NotfoundComponent } from './notfound/notfound.component';
 import { FilterTextPipe } from './pipes/filter-text.pipe';
 // import { AuthGuard } from './auth.guard';
 @NgModule({
@@ -51,6 +52,7 @@ import { FilterTextPipe } from './pipes/filter-text.pipe';
     FooterComponent,
     ProfileComponent,
     LandingpageComponent,
+    NotfoundComponent,
     FilterTextPipe
   ],
   imports: [

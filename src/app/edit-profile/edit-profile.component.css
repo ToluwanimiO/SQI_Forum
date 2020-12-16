@@ -1,12 +1,10 @@
 
 @import '../app.component.css';
 .round{
-    border-radius: 1.5em;
+    border-radius: 0.3em;
     background-color: #F6F6F6;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
     border:0px;
-    margin-top: -50px;
-    padding-top: 70px;
     /* z-index: -1; */
 }
 .signText{

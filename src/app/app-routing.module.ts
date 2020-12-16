@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-// <<<<<<< HEAD
-// <<<<<<< HEAD
 import { EditProfileComponent } from './edit-profile/edit-profile.component';
 import { SignInComponent } from './sign-in/sign-in.component';
 import { SignUpPhase2Component } from './sign-up-phase2/sign-up-phase2.component';
@@ -14,6 +12,7 @@ import { PostcontentComponent } from './postcontent/postcontent.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 // import { AuthGuard } from './auth.guard';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 const routes: Routes = [
@@ -22,7 +21,7 @@ const routes: Routes = [
   {path:"signIn",component:SignInComponent},
   {path:"signUp",component:SignUpComponent},
   {path:"signUp2",component:SignUpPhase2Component},
-  {path:"editProfile",component:EditProfileComponent},
+  // {path:"editProfile",component:EditProfileComponent, canActivate:[UserguardGuard]},
   {path: "create", component: CreatnewpostComponent},
   // {path: "create", component: CreatnewpostComponent, canActivate: [AuthGuard]},
   {path: "postcontent/:slug/:id", component: PostcontentComponent},
@@ -30,18 +29,11 @@ const routes: Routes = [
   {path:"profile/:id", component:ProfileComponent},
   {path:'categories', children:[
       {path:'', component:CategoriesComponent},
-      {path:'sub-categories', component:SubCategoriesComponent}
+      {path:':name', component:SubCategoriesComponent}
   ]},
+  {path:"**", component:NotfoundComponent}
   
 ]
-// =======
-
-// const routes: Routes = [
-//   { path: '', redirectTo: "/home", pathMatch: 'full' },
-  
-// ];
-// >>>>>>> cfd38875c97c4abb6be2631feb2f91c5875f299a
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

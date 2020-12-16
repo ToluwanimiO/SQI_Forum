@@ -10,20 +10,14 @@
     <div class="col-12 p-3 m-2 m-md-0 pr-md-5 pl-md-5 pb-md-5 pt-md-0 bg-white border rounded">
         <div class="row p-3">
             <h1 class="col-12">Categories</h1>
-            <div *ngFor="let carts of isArrayCategories"  class="col-md-3 col-6 text-center mx-auto rounded">
-              <div routerLink="/categories/sub-categories" class=" shadow card categoryCard mb-5">
+            <span *ngIf="!loading" class="col-12">
+              <div class="text-center pt-5 w-100 h-100"><span class="fa m-auto fa-spinner fa-spin fa-2x"></span></div>
+            </span>
+            <div *ngFor="let carts of categoriesArray"  class="col-md-3 col-6 text-center rounded">
+              <div (click)="routeToCategories(carts.name)" class=" shadow card categoryCard mb-5">
                 <img src="../../assets/image/dark.jpg" class="categoryImage rounded-top">
                 <div class="card-body small p-3 cardText">
-                  <b>{{carts}}</b>
-                </div>
-              </div>
-            </div>
-
-            <div *ngFor="let carts of categoriesArray"  class="col-md-3 col-6 text-center mx-auto rounded">
-              <div [attr.routerLink]="'/categories/'+'i'" class=" shadow card categoryCard mb-5">
-                <img src="../../assets/image/dark.jpg" class="categoryImage rounded-top">
-                <div class="card-body small p-3 cardText">
-                  <b>{{carts}}</b>
+                  <b>{{carts.name}}</b>
                 </div>
               </div>
             </div>

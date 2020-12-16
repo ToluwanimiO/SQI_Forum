@@ -14,6 +14,7 @@ export class NavbarComponent implements OnInit {
   }
   emitText(e){
     this.searchText.emit(e.target.value)
+    console.log(e.target.value)
     // console.log(e.target.value)
   }
 

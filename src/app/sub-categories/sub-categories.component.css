@@ -17,3 +17,7 @@
 .form-control:focus{
   border-color: #021042 ;
 }
+
+.heading{
+  cursor: pointer;
+}

@@ -46,3 +46,13 @@
 .sub-reactionDiv{
     width:fit-content;
 }
+
+.sameCategoryLink{
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+.sameCategoryLink:hover{
+    transition: 0.3s ease-in;
+    border-color: blue !important;
+}

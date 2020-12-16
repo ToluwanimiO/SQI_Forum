@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoryService } from '../services/category.service';
 
 @Component({
@@ -7,15 +8,19 @@ import { CategoryService } from '../services/category.service';
   styleUrls: ['./categories.component.css']
 })
 export class CategoriesComponent implements OnInit {
-public isArrayCategories = ['Software','Hardware','Web development','Python','Django','Laptop','Computer','Digital-Maketing','Sofware','Hardware','Web','Python','Django','Laptop','Computer','Digital','Hardware','Web development','Python','Django'];
 public categoriesArray;
-  constructor(public categories:CategoryService) { }
+public loading = false;
+  constructor(public categories:CategoryService, public router:Router) { }
 
   ngOnInit(): void {
     this.categories.getCategories().subscribe(data =>{
       this.categoriesArray = data;
+      this.loading = true;
       console.log(data);
     })
+  }
+  routeToCategories = (name) =>{
+    this.router.navigate([`/categories/${name}`])
   }
 
 }

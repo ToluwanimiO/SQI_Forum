@@ -1,18 +1,11 @@
 <app-header></app-header>
-<!-- <<<<<<< HEAD
-<div class="container mt-5 my-5">
-    <span class="text-center d-block"[style.color]="submitStatus=='Your post was succesful'?'green':'red'">{{submitStatus}}</span>
-    <div class="row p-3">
-        <div class="col-md-10 text-center div  mx-auto">
-            <h2 class="mt-4">Create a new Post</h2  >
-======= -->
-<div class="container  mt-2 p-1 p-md-3">
+
+<div class="container mt-2 p-1 p-md-3">
     <app-navbar></app-navbar>
     <span class="text-center d-block"[style.color]="submitStatus=='Your post was succesful'?'green':'red'">{{submitStatus}}</span>
-    <div class="row rounded">
-        <div class="col-md-10 text-center shadow-sm shadowT mx-auto card">
+    <div class="row border rounded">
+        <div class="col-md-12 text-center shadow-sm shadowT mx-auto">
             <h1 class="mt-4">Create a new Post</h1>
-<!-- >>>>>>> b509b7a3f08ad4819f11df3345932c5f63a513a6 -->
             <form action="" class="border-0" [formGroup]="useForm">
                 <div class="row form-group">
                     <div class="col-md-3">
@@ -33,9 +26,8 @@
                         <quill-editor class="editorStyle" [styles]="{height: '300px'}" id="subject" formControlName="body" (onContentChange)="maxlength($event)" required></quill-editor>
                         <span *ngIf="useForm.get('body').value !== null">{{useForm.get('body').value.length}}</span>
                     </div>
-
-                <div>
-                    <input class="btn mb-4" (click)="submitPost()" [disabled]="useForm.invalid" type="submit" value="Publish" />
+                <div class="mb-2">
+                    <input class="btn" (click)="submitPost()" [disabled]="useForm.invalid" type="submit" value="Publish" />
                 </div>
             </form>
         </div>

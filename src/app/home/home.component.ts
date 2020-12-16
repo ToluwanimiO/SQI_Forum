@@ -64,7 +64,12 @@ export class HomeComponent implements OnInit {
     console.log(id)
     this.router.navigate([`/postcontent/${id}`])
   }
+  viewProfile = () =>{
+    this.router.navigate([`/profile/${this.userDet.pk}`]);
+  }
+
   viewSearchText(e){
     this.searchText = e;
+    console.log(e)
   }
 }

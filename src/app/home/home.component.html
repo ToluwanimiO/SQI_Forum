@@ -5,16 +5,16 @@
     <span *ngIf="!loading">
       <div class="text-center pt-5"><span class="fa fa-spinner fa-spin fa-2x"></span></div>
     </span>
-  <div class="row" *ngIf="loading">
+  <div class="row mt-n5 mt-md-0" *ngIf="loading">
     <div class="bg-white col-xl-9 col-lg-8 col-md-7 rounded border p-4">
       <span >
-      <div *ngFor="let item of isHomepageArray | filterText:searchText" class="clearfix p-2 m-2 border-bottom">
-        <h5><a (click)="viewPostDetails(item.slug+'/'+item.id)" class="text-dark titleLink font-weight-bold">{{item.title}}</a></h5>
-        <span class="small text-muted mr-2">by {{item.author.username}}&nbsp; |</span>
-        <span class="small text-muted ">{{item.category.name}}</span>
-        <span class="text-primary fa fa-thumbs-up float-right mr-3">{{item.upvote}}</span>
-        <span class="fa text-danger fa-comment-o float-right mr-4">{{item.comment_count}}</span>
-      </div>
+        <div *ngFor="let item of isHomepageArray | filterText:searchText" class="clearfix p-2 m-2 border-bottom">
+          <h5><a (click)="viewPostDetails(item.slug+'/'+item.id)" class="text-dark titleLink font-weight-bold">{{item.title}}</a></h5>
+          <span class="small text-muted mr-2">by {{item.author.username}}&nbsp; |</span>
+          <span class="small text-muted ">{{item.category.name}}</span>
+          <span class="text-primary fa fa-thumbs-up float-right mr-3">{{item.upvotes_count}}</span>
+          <span class="fa text-danger fa-comment-o float-right mr-4">{{item.comments_count}}</span>
+        </div>
       </span>
     </div>
     <div class="col-xl-3 col-lg-4 col-md-5 d-none d-md-inline w-100 pr-0 row pl-5">
@@ -31,13 +31,8 @@
         <p class="small mt-4 mb-4">
           Words words words words words words words words words words words words words
         </p>
-<!-- <<<<<<< HEAD
-        <button class="mx-auto btn-sm btn text-white sidebtns">Edit Profile</button>
+        <button class="mx-auto btn-sm btn text-white sidebtns" (click)="viewProfile()">View Profile</button>
         <button class="mx-auto btn-sm float-right text-white btn sidebtns" (click)="logOut()">Log out</button>
-======= -->
-        <button class="mx-auto btn-sm btn text-white sidebtns">View Profile</button>
-        <button class="mx-auto btn-sm float-right text-white btn sidebtns" (click)="logOut()">Log out</button>
-<!-- >>>>>>> b509b7a3f08ad4819f11df3345932c5f63a513a6  -->
       </div>
       <div class="bg-white col-12 mt-2 rounded border p-3">
         <span *ngIf="loadingCategories">
