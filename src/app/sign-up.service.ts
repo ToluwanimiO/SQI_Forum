@@ -11,6 +11,6 @@ export class SignUpService {
   // public baseUrl = ;
   addNewUser(user){
     // console.log(user)
-    return this.http.post<any>("http://sqiforum.herokuapp.com/api/v1/auth/registration/",user);
+    return this.http.post<any>("https://sqiforum.herokuapp.com/api/v1/auth/registration/",user);
   }
 }

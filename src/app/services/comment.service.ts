@@ -7,7 +7,7 @@ import { Injectable } from '@angular/core';
 export class CommentService {
 
   constructor(public http:HttpClient) { }
-  public baseUrl = "http://sqiforum.herokuapp.com/api/v1"
+  public baseUrl = "https://sqiforum.herokuapp.com/api/v1"
   sendComment(comment,slug,id){
     return this.http.post<any>(`${this.baseUrl}/post/${slug}/${id}/comment/`,comment);
   }
