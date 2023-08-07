@@ -1,0 +1,6 @@
+[[headers]]
+for = "/*" # Specify the path for which you want to configure CORS
+  [headers.values]
+  Access-Control-Allow-Origin = "*" # Replace "*" with the allowed origin(s), or use specific domains
+  Access-Control-Allow-Methods = "GET, POST, PUT, DELETE, OPTIONS" # List allowed HTTP methods
+  Access-Control-Allow-Headers = "Origin, X-Requested-With, Content-Type, Accept" # List allowed headers
